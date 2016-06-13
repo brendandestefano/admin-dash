@@ -1,6 +1,6 @@
 .dashboard-sidebar{
-	@include span(2 of 12 last no-gutters wide);
-	background: #E3E8E9;
+	@include container;
+	@include span(5 of 12 last no-gutters);
 	height: 100vh;
 	overflow: scroll;
 }

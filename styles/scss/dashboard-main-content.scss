@@ -1,21 +1,37 @@
 .dashboard-main-content{
-	@include span(7 of 12 no-gutters);
+	@include span(11 of 12 last no-gutters);
+	@include container;
 }
-.dashboard-main-content__charts-wrapper{
-	border-bottom: 1px solid #EEE;
+.dashboard-content-feed{
+	@include span(7 of 12 first no-gutters wide);
+	@include container;
 }
-.dashboard-chart{
-	@include span(4 no-gutters);
+.dashboard-stats-feed{
+	@include span(5 of 12 last no-gutters);
+	@include container;
+}
+.dashboard-chart-wrapper{
+	@include container;
+	padding-top: 1em;
 }
 .dashboard-main-content__school-name{
-	color: #3E627E;
+	color: #FFF;
 	margin: 0;
 	font-size: 3em;
-	padding: .75em .75em 0;
+	padding: .95em .75em 0;
 	font-weight: 300;
+	z-index: 2;
+	position: relative;
 }
 .dashboard-main-content__card{
-	@include span(6 no-gutters);
+	@include container;
+	border-right: 1px solid #EEE;
+	&.first{
+		@include span(6 no-gutters);
+	}
+	&.last{
+		@include span(6 no-gutters wide);
+	}
 	&.no-border-right{
 		border-right: 0;
 	}
@@ -23,16 +39,10 @@
 		box-shadow: 1px 1px 8px #999;
 	}
 }
-.dashboard-main-content__cards-wrapper{
+.dashboard-main-content__card-wrapper{
 	padding: 0.625em;
-}
-.top-card,
-.middle-card{
 	border-bottom: 1px solid #EEE;
-	border-right: 1px solid #EEE;
-}
-.bottom-card{
-	border-right: 1px solid #EEE;
+	border-top: 1px solid #EEE;
 }
 .dashboard-main-content__count{
 	text-align: center;
@@ -40,4 +50,19 @@
     color: #777;
     font-size: 2em;
     font-weight: 300;
+}
+.dashboard-widgets-wrapper{
+	background: #E3E8E9;
+	padding: 0.938em;
+	height: calc(100vh - 150px);
+	overflow-y: scroll;
+	.dashboard__teaser-text{
+		color: #666;
+		padding: 0;
+		font-weight: 400;
+	}
+}
+.dashboard-scrollable-stats{
+	height: calc(100vh - 52px);
+	overflow-y: scroll;
 }

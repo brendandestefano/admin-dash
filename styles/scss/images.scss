@@ -13,15 +13,16 @@
 	background: #000;
     opacity: .35;
     position: absolute;
+    top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 .vertical-navbar__overlay{
     height: 6.625em;
 }
-.dashboard-aside__overlay{
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+.dashboard-banner-overlay{
+	opacity: .5;
 }
 .notification{
 	position: absolute;
@@ -38,4 +39,17 @@
 		text-align: center;
 		display: block;
 	}
+}
+.background-banner{
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.dashboard-background-banner{
+	height: 9.375em;
+	position: relative;
+}
+.dashboard-chart{
+	@include container;
+	@include span(3 of 5 at 2 isolate);
+	margin-bottom: 1em;
 }

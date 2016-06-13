@@ -3,6 +3,16 @@
 <head>
 	<title>Admin Dashboard</title>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<style type="text/css">
+		/*
+			URL based off web app banner. Changes per school
+		*/
+		.dashboard-background-banner{
+			background: url("https://www.filepicker.io/api/file/xwfciiM0Sw2iqkc2SDCY");
+		}
+	</style>
 </head>
 <body>
 	<div class="container">
@@ -62,200 +72,371 @@
 				</a>
 			</div>
 			<div class="vertical-navbar__profile-wrapper">
-				<img class="vertical-navbar__profile-img" src="img/profile-icon.jpg">
+				<!-- src based off school logo -->
+				<img class="vertical-navbar__profile-img" src="https://upload.wikimedia.org/wikipedia/en/a/ad/Colby_college_bicentennial_seal.png">
+				<!-- -->
 				<div class="vertical-navbar__overlay-wrapper">
-					<div class="overlay vertical-navbar__overlay full-width"></div>
+					<div class="overlay vertical-navbar__overlay"></div>
 					<img class="vertical-navbar__icon" src="img/icon-profile.svg">
 					<p class="dashboard__teaser-text vertical-navbar__name full-width">Profile</p>
 				</div>
 			</div>
 		</div>
 
-		<div class="dashboard-aside">
-			<div style="position:relative">
-				<img class="full-width" src="https://upload.wikimedia.org/wikipedia/en/a/ad/Colby_college_bicentennial_seal.png">
-				<div class="overlay dashboard-aside__overlay full-width"></div>
-			</div>
-			<div class="dashboard-aside__info-wrapper container">
-				<h4 class="dashboard__teaser-text">Quick Stats</h4>
-				<div class="dashboard-aside__stat-wrapper">
-					<p class="dashboard-aside__count">12.3K</p>
-					<p class="category-text">Students</p>
-				</div>
-				<div class="dashboard-aside__stat-wrapper">
-					<p class="dashboard-aside__count">50.2K</p>
-					<p class="category-text">Alumni</p>
-				</div>
-				<div class="dashboard-aside__stat-wrapper">
-					<p class="dashboard-aside__count">5.2K</p>
-					<p class="category-text">Active Users</p>
-				</div>
-				<div class="dashboard-aside__stat-wrapper">
-					<p class="dashboard-aside__count">38.3K</p>
-					<p class="category-text">Messages</p>
-				</div>
-				<div class="dashboard-aside__stat-wrapper">
-					<p class="dashboard-aside__count">1.3M</p>
-					<p class="category-text">Visits</p>
-				</div>
-				<div class="dashboard-aside__stat-wrapper">
-					<p class="dashboard-aside__count">121</p>
-					<p class="category-text">Notes</p>
-				</div>
-				<div class="dashboard-aside__stat-wrapper">
-					<p class="dashboard-aside__count">6.5K</p>
-					<p class="category-text">Connections</p>
-				</div>
-				<div class="dashboard-aside__stat-wrapper">
-					<p class="dashboard-aside__count">45</p>
-					<p class="category-text">Open Jobs</p>
-				</div>	
-			</div>
-		</div>
-
 		<div class="dashboard-main-content">
-			<h2 class="dashboard-main-content__school-name">Colby College</h2>
-			<div class="dashboard-main-content__charts-wrapper">
-				<!-- JUST FOR DESIGN PURPOSES .dashboard-chart is a span(4) -->
-				<img src="http://i.imgur.com/YVumzx5.png" style="margin: 0 auto;display: block;">
-				<!-- end JUST FOR DESIGN PURPOSES -->
-				<div class="dashboard-chart"></div>
-				<div class="dashboard-chart"></div>
-				<div class="dashboard-chart"></div>
-			</div>
-			<div class="dashboard-main-content__cards-wrapper container">
-				<div class="dashboard-main-content__card top-card">
-					<p class="category-text dashboard-main-content__category-text">Active Users</p>
-					<p class="dashboard-main-content__count">5,232</p>
+			<div class="dashboard-content-feed">
+				<div class="background-banner dashboard-background-banner">
+					<h2 class="dashboard-main-content__school-name">Colby College</h2>
+					<div class="overlay dashboard-banner-overlay"></div>
 				</div>
-				<div class="dashboard-main-content__card top-card no-border-right">
-					<p class="category-text dashboard-main-content__category-text">Mentors</p>
-					<p class="dashboard-main-content__count">2,345</p>
-				</div>
-				<div class="dashboard-main-content__card middle-card">
-					<p class="category-text dashboard-main-content__category-text">Messages</p>
-					<p class="dashboard-main-content__count">38,343</p>
-				</div>
-				<div class="dashboard-main-content__card middle-card no-border-right">
-					<p class="category-text dashboard-main-content__category-text">Jobs</p>
-					<p class="dashboard-main-content__count">245</p>
-				</div>
-				<div class="dashboard-main-content__card bottom-card">
-					<p class="category-text dashboard-main-content__category-text">Companies</p>
-					<p class="dashboard-main-content__count">38</p>
-				</div>
-				<div class="dashboard-main-content__card bottom-card no-border-right">
-					<p class="category-text dashboard-main-content__category-text">Events</p>
-					<p class="dashboard-main-content__count">61</p>
-				</div>
-			</div>
-		</div>
+				<div class="dashboard-widgets-wrapper full-width">
+					<div class="dashboard-single-widget">
+						<h4 class="dashboard__teaser-text">Trending Mentors</h4>
+						<div class="dashboard-single-widget__partial">
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/68.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Shawn Tee '10</p>
+								</a>
+								<p class="user-city">Boston, MA</p>
+								<p class="user-title">Systems Analyst | Fidelity Investments</p>
+							</div>	
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/48.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Joe Dimaggio '13</p>
+								</a>
+								<p class="user-city">Providence, RI</p>
+								<p class="user-title">Full-Stack Developer | Nike Corporation</p>
+							</div>
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/68.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Ronda Rousey '09</p>
+								</a>
+								<p class="user-city">Boston, MA</p>
+								<p class="user-title">Business Development Representative | Bank of America</p>
+							</div>
+						</div>
+						<div class="dashboard-single-widget__partial">
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/67.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Lisa Smith '11</p>
+								</a>
+								<p class="user-city">Boston, MA</p>
+								<p class="user-title">Data Analyst | Deloitte Consulting</p>
+							</div>
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/8.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Jane Torre '15</p>
+								</a>
+								<p class="user-city">South Boston, MA</p>
+								<p class="user-title">Head of PR | Gillette Corporation</p>
+							</div>
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/98.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Rich Richardson '07</p>
+								</a>
+								<p class="user-city">Boston, MA</p>
+								<p class="user-title">Graphic Designer | The MEME Design</p>
+							</div>
+						</div>
+						<button>See More</button>
+					</div>
 
-		<div class="dashboard-sidebar">
-			<div class="dashboard-search-bar-wrapper">
-				<img src="img/icon-mag-glass.svg">
-				<input type="text" placeholder="Search">
+					<div class="dashboard-single-widget">
+						<h4 class="dashboard__teaser-text">New Connections</h4>
+						<div class="dashboard-single-widget__partial">
+							<div class="dashboard__connection-wrapper container">
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/18.jpg">
+										<p class="user-name">Shawn Tee</p>
+									</a>
+									<p class="user-type">Mentor</p>
+								</div>
+								<div class="connection-icon-wrapper">
+									<img class="connection-icon" src="img/icon-connection.svg">
+									<p class="connection-type">Mentor Connection</p>
+								</div>
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/20.jpg">
+										<p class="user-name">Joe Dimaggio</p>
+									</a>
+									<p class="user-type">Student</p>
+								</div>
+							</div>
+							<p class="dashboard__connection--shared-interests">
+								<span>Shared Interests</span><br />#sports #business #fashion #art #music #economics
+							</p>
+							<div class="dashboard__connection-wrapper container">
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/18.jpg">
+										<p class="user-name">Lisa Turner</p>
+									</a>
+									<p class="user-type">Alumni</p>
+								</div>
+								<div class="connection-icon-wrapper">
+									<img class="connection-icon" src="img/icon-connection.svg">
+									<p class="connection-type">Alumni Connection</p>
+								</div>
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/25.jpg">
+										<p class="user-name">Sam Stone</p>
+									</a>	
+									<p class="user-type">Alumni</p>
+								</div>
+							</div>
+							<p class="dashboard__connection--shared-interests">
+								<span>Shared Interests</span><br />#music #rock-climbing #fashion #art #travel
+							</p>
+							<div class="dashboard__connection-wrapper container">
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/10.jpg">
+										<p class="user-name">Tina Turner</p>
+									</a>
+									<p class="user-type">Student</p>
+								</div>
+								<div class="connection-icon-wrapper">
+									<img class="connection-icon" src="img/icon-connection.svg">
+									<p class="connection-type">Student Connection</p>
+								</div>
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/28.jpg">
+										<p class="user-name">Sara Watkins</p>
+									</a>
+									<p class="user-type">Student</p>
+								</div>
+							</div>
+							<p class="dashboard__connection--shared-interests">
+								<span>Shared Interests</span><br />#sports #music #fashion #art #travel
+							</p>
+						</div>
+						<div class="dashboard-single-widget__partial">
+							<div class="dashboard__connection-wrapper container">
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/17.jpg">
+										<p class="user-name">Carlos Diaz</p>
+									</a>
+									<p class="user-type">Mentor</p>
+								</div>
+								<div class="connection-icon-wrapper">
+									<img class="connection-icon" src="img/icon-connection.svg">
+									<p class="connection-type">Staff Connection</p>
+								</div>
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/20.jpg">
+										<p class="user-name">Jane Simmons</p>
+									</a>
+									<p class="user-type">Staff</p>
+								</div>
+							</div>
+							<p class="dashboard__connection--shared-interests">
+								<span>Shared Interests</span><br />#sports #business #fashion #art #music #economics
+							</p>
+							<div class="dashboard__connection-wrapper container">
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/11.jpg">
+										<p class="user-name">Lisa Leesa</p>
+									</a>
+									<p class="user-type">Parent</p>
+								</div>
+								<div class="connection-icon-wrapper">
+									<img class="connection-icon" src="img/icon-connection.svg">
+									<p class="connection-type">Parent Connection</p>
+								</div>
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/25.jpg">
+										<p class="user-name">Samantha Smith</p>
+									</a>
+									<p class="user-type">Alumni</p>
+								</div>
+							</div>
+							<p class="dashboard__connection--shared-interests">
+								<span>Shared Interests</span><br />#music #rock-climbing #fashion #art #travel
+							</p>
+							<div class="dashboard__connection-wrapper container">
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/1.jpg">
+										<p class="user-name">Tina Trust</p>
+									</a>	
+									<p class="user-type">Student</p>
+								</div>
+								<div class="connection-icon-wrapper">
+									<img class="connection-icon" src="img/icon-connection.svg">
+									<p class="connection-type">Student Connection</p>
+								</div>
+								<div class="dashboard__connection--avatar-wrapper">
+									<a href="/path/to/profile">
+										<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/28.jpg">
+										<p class="user-name">Sammy Watkins</p>
+									</a>
+									<p class="user-type">Student</p>
+								</div>
+							</div>
+							<p class="dashboard__connection--shared-interests">
+								<span>Shared Interests</span><br />#sports #music #fashion #art #travel
+							</p>
+						</div>
+						<button>See More</button>
+					</div>
+
+					<div class="dashboard-single-widget">
+						<h4 class="dashboard__teaser-text">Trending Content</h4>
+						<div class="dashboard-single-widget__partial">
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/68.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Shawn Tee <span>1d ago</span></p>
+								</a>
+								<p class="user-city">Newsfeed Post</p>
+								<p class="user-title">What is the best way to start a phone interview?</p>
+								<p class="user-title"><img src="img/icon-views.svg"> 100 | <img src="img/icon-favorite.svg"> 10 | <img src="img/icon-comment.svg"> 5</p>
+							</div>
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/98.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Lisa Conroy <span>3d ago</span></p>
+								</a>
+								<p class="user-city">Suffolk Alumni Group</p>
+								<p class="user-title">When is the 5 year reunion?</p>
+								<p class="user-title"><img src="img/icon-views.svg"> 200 | <img src="img/icon-favorite.svg"> 5 | <img src="img/icon-comment.svg"> 7</p>
+							</div>
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/38.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Dillon West <span>5d ago</span></p>
+								</a>
+								<p class="user-city">Newsfeed Post</p>
+								<p class="user-title">What are some of your favorite resume resources and how did you find these...</p>
+								<p class="user-title"><img src="img/icon-views.svg"> 234 | <img src="img/icon-favorite.svg"> 15 | <img src="img/icon-comment.svg"> 25</p>
+							</div>
+						</div>
+						<div class="dashboard-single-widget__partial">
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/62.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Sean Thornton <span>5d ago</span></p>
+								</a>
+								<p class="user-city">Boston Hockey Club</p>
+								<p class="user-title">Who can play this Thursday?</p>
+								<p class="user-title"><img src="img/icon-views.svg"> 113 | <img src="img/icon-favorite.svg"> 2 | <img src="img/icon-comment.svg"> 7</p>
+							</div>
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/38.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Jill Fastow <span>8d ago</span></p>
+								</a>
+								<p class="user-city">Newsfeed Post</p>
+								<p class="user-title">Summer is here! Now time to find an internship...</p>
+								<p class="user-title"><img src="img/icon-views.svg"> 50 | <img src="img/icon-favorite.svg"> 11 | <img src="img/icon-comment.svg"></p>
+							</div>
+							<a href="/path/to/profile">
+								<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/99.jpg">
+							</a>
+							<div class="dashboard-widget-user-details-wrapper">
+								<a href="/path/to/profile">
+									<p class="user-name">Donald West <span>10d ago</span></p>
+								</a>
+								<p class="user-city">Newsfeed Post</p>
+								<p class="user-title">Where was your guys first internship? Any referrals?</p>
+								<p class="user-title"><img src="img/icon-views.svg"> 114 | <img src="img/icon-favorite.svg"> 3 | <img src="img/icon-comment.svg"> 14</p>
+							</div>
+						</div>
+						<button>See More</button>
+					</div>
+				</div>
 			</div>
-			<div class="dashboard-sidebar__widgets-wrapper">
-				<div class="dashboard-sidebar__single-widget">
-					<h4 class="dashboard__teaser-text">Trending Mentors</h4>
-					<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/68.jpg">
-					<div class="dashboard-sidebar__details-wrapper">
-						<p class="user-name">Shawn Tee '10</p>
-						<p class="user-city">Boston, MA</p>
-						<p class="user-title">Systems Analyst | Fidelity Investments</p>
-					</div>
-					<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/48.jpg">
-					<div class="dashboard-sidebar__details-wrapper">
-						<p class="user-name">Joe Dimaggio '13</p>
-						<p class="user-city">Providence, RI</p>
-						<p class="user-title">Full-Stack Developer | Nike Corporation</p>
-					</div>
-					<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/68.jpg">
-					<div class="dashboard-sidebar__details-wrapper">
-						<p class="user-name">Ronda Rousey '09</p>
-						<p class="user-city">Boston, MA</p>
-						<p class="user-title">Business Development Representative | Bank of America</p>
-					</div>
-					<button>See More</button>
+			<div class="dashboard-stats-feed">
+				<div class="dashboard-search-bar-wrapper">
+					<img src="img/icon-mag-glass.svg">
+					<input type="text" placeholder="Search">
 				</div>
-				<div class="dashboard-sidebar__single-widget">
-					<h4 class="dashboard__teaser-text">New Connections</h4>
-					<div class="dashboard-sidebar__connection-wrapper container">
-						<div class="dashboard-sidebar__connection--avatar-wrapper">
-							<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/18.jpg">
-							<p class="user-name">Shawn Tee</p>
-							<p class="user-type">Mentor</p>
-						</div>	
-						<img class="connection-icon" src="img/icon-connection.svg">
-						<div class="dashboard-sidebar__connection--avatar-wrapper">
-							<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/20.jpg">
-							<p class="user-name">Joe Dimaggio</p>
-							<p class="user-type">Student</p>
+				<div class="dashboard-scrollable-stats">
+					<div class="dashboard-chart-wrapper">
+						<p class="chart-title">Engagement by Industry</p>
+						<div class="dashboard-chart">
+							<img src="img/chart1.png" class="full-width">
 						</div>
 					</div>
-					<p class="dashboard-sidebar__connection--shared-interests">
-						<span>Shared Interests</span><br />#sports #business #fashion #art #music #economics
-					</p>
-					<div class="dashboard-sidebar__connection-wrapper container">
-						<div class="dashboard-sidebar__connection--avatar-wrapper">
-							<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/18.jpg">
-							<p class="user-name">Lisa Turner</p>
-							<p class="user-type">Mentor</p>
-						</div>	
-						<img class="connection-icon" src="img/icon-connection.svg">
-						<div class="dashboard-sidebar__connection--avatar-wrapper">
-							<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/25.jpg">
-							<p class="user-name">Sam Stone</p>
-							<p class="user-type">Alumni</p>
+					<div class="dashboard-main-content__card-wrapper container">
+						<div class="dashboard-main-content__card first">
+							<p class="category-text dashboard-main-content__category-text">Active Users</p>
+							<p class="dashboard-main-content__count">5,232</p>
+						</div>
+						<div class="dashboard-main-content__card last no-border-right">
+							<p class="category-text dashboard-main-content__category-text">Mentors</p>
+							<p class="dashboard-main-content__count">2,345</p>
 						</div>
 					</div>
-					<p class="dashboard-sidebar__connection--shared-interests">
-						<span>Shared Interests</span><br />#music #rock-climbing #fashion #art #travel
-					</p>
-					<div class="dashboard-sidebar__connection-wrapper container">
-						<div class="dashboard-sidebar__connection--avatar-wrapper">
-							<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/10.jpg">
-							<p class="user-name">Tina Turner</p>
-							<p class="user-type">Mentor</p>
-						</div>	
-						<img class="connection-icon" src="img/icon-connection.svg">
-						<div class="dashboard-sidebar__connection--avatar-wrapper">
-							<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/28.jpg">
-							<p class="user-name">Sara Watkins</p>
-							<p class="user-type">Alumni</p>
+					<div class="dashboard-chart-wrapper">
+						<p class="chart-title">Engagement by Role</p>
+						<div class="dashboard-chart">
+							<img src="img/chart2.png" class="full-width">
 						</div>
 					</div>
-					<p class="dashboard-sidebar__connection--shared-interests">
-						<span>Shared Interests</span><br />#sports #music #fashion #art #travel
-					</p>
-					<button>See More</button>
-				</div>
-				<div class="dashboard-sidebar__single-widget">
-					<h4 class="dashboard__teaser-text">Trending Content</h4>
-					<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/68.jpg">
-					<div class="dashboard-sidebar__details-wrapper">
-						<p class="user-name">Shawn Tee <span>1d ago</span></p>
-						<p class="user-city">Newsfeed Post</p>
-						<p class="user-title">What is the best way to start a phone interview?</p>
-						<p class="user-title"><img src="img/icon-views.svg"> 100 | <img src="img/icon-favorite.svg"> 10 | <img src="img/icon-comment.svg"> 5</p>
+					<div class="dashboard-main-content__card-wrapper container">
+						<div class="dashboard-main-content__card first">
+							<p class="category-text dashboard-main-content__category-text">Messages</p>
+							<p class="dashboard-main-content__count">38,343</p>
+						</div>
+						<div class="dashboard-main-content__card last no-border-right">
+							<p class="category-text dashboard-main-content__category-text">Jobs</p>
+							<p class="dashboard-main-content__count">245</p>
+						</div>
 					</div>
-					<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/98.jpg">
-					<div class="dashboard-sidebar__details-wrapper">
-						<p class="user-name">Lisa Conroy <span>3d ago</span></p>
-						<p class="user-city">Suffolk Alumni Group</p>
-						<p class="user-title">When is the 5 year reunion?</p>
-						<p class="user-title"><img src="img/icon-views.svg"> 200 | <img src="img/icon-favorite.svg"> 5 | <img src="img/icon-comment.svg"> 7</p>
+					<div class="dashboard-chart-wrapper">
+						<p class="chart-title">Mentor Categories</p>
+						<div class="dashboard-chart">
+							<img src="img/chart3.png" class="full-width">
+						</div>
 					</div>
-					<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/38.jpg">
-					<div class="dashboard-sidebar__details-wrapper">
-						<p class="user-name">Dillon West <span>5d ago</span></p>
-						<p class="user-city">Newsfeed Post</p>
-						<p class="user-title">What are some of your favorite resume resources and how did you find these...</p>
-						<p class="user-title"><img src="img/icon-views.svg"> 234 | <img src="img/icon-favorite.svg"> 15 | <img src="img/icon-comment.svg"> 25</p>
+					<div class="dashboard-main-content__card-wrapper container">
+						<div class="dashboard-main-content__card first">
+							<p class="category-text dashboard-main-content__category-text">Companies</p>
+							<p class="dashboard-main-content__count">38</p>
+						</div>
+						<div class="dashboard-main-content__card last no-border-right">
+							<p class="category-text dashboard-main-content__category-text">Events</p>
+							<p class="dashboard-main-content__count">61</p>
+						</div>
 					</div>
-					<button>See More</button>
-				</div>
+				</div>	
 			</div>
 		</div>
 	</div>

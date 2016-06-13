@@ -1,0 +1,43 @@
+.dashboard-main-content{
+	@include span(7 of 12 no-gutters);
+}
+.dashboard-main-content__charts-wrapper{
+	border-bottom: 1px solid #EEE;
+}
+.dashboard-chart{
+	@include span(4 no-gutters);
+}
+.dashboard-main-content__school-name{
+	color: #3E627E;
+	margin: 0;
+	font-size: 3em;
+	padding: .75em .75em 0;
+	font-weight: 300;
+}
+.dashboard-main-content__card{
+	@include span(6 no-gutters);
+	&.no-border-right{
+		border-right: 0;
+	}
+	&:hover{
+		box-shadow: 1px 1px 8px #999;
+	}
+}
+.dashboard-main-content__cards-wrapper{
+	padding: 0.625em;
+}
+.top-card,
+.middle-card{
+	border-bottom: 1px solid #EEE;
+	border-right: 1px solid #EEE;
+}
+.bottom-card{
+	border-right: 1px solid #EEE;
+}
+.dashboard-main-content__count{
+	text-align: center;
+    margin-top: .5em;
+    color: #777;
+    font-size: 2em;
+    font-weight: 300;
+}

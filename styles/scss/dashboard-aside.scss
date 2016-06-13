@@ -1,0 +1,25 @@
+.dashboard-aside{
+	@include container;
+	@include span(2 of 12 no-gutters wide);
+	height: 100vh;
+	overflow: hidden;
+}
+.dashboard-aside__info-wrapper{
+	@include gradient(#3E627E, #42656E, bottom);
+	padding: 1.563em .75em;
+	color: #CCC;
+	height: 100%;
+}
+.dashboard-aside__stat-wrapper{
+	@include span(6 no-gutters);
+	@media all and (max-width: 66.250em){
+		@include span(12 no-gutters);
+	}
+}
+.dashboard-aside__count{
+	text-align: center;
+	color: #FFF;
+	font-size: 1.5em;
+	margin: 0.625em 0 0.375em;
+	font-weight: 300;
+}

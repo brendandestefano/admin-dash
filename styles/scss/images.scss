@@ -1,0 +1,41 @@
+.vertical-navbar__icon{
+	display: block;
+    margin: 0 auto 1em;
+    padding-top: .75em;
+}
+.vertical-navbar__profile-img{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	border-bottom: 5px solid $brand-secondary-color;
+}
+.overlay{
+	background: #000;
+    opacity: .35;
+    position: absolute;
+}
+.vertical-navbar__overlay{
+    height: 6.625em;
+}
+.dashboard-aside__overlay{
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.notification{
+	position: absolute;
+	background: #FF0000;
+	width: 1.25em;
+	padding: 0.313em;
+	@include border-radius(50%);
+	&.hidden{
+		visibility: hidden;
+	}
+	span{
+		color: #FFF;
+		font-size: .500em;
+		text-align: center;
+		display: block;
+	}
+}

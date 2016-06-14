@@ -10,22 +10,22 @@
         </mask>
     </defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Reports-White" transform="translate(-2.000000, 0.000000)">
-            <g id="Paper" stroke="#FFFFFF" stroke-width="1.07709307" fill="#D8D8D8" fill-opacity="0">
+        <g id="Reports-White" transform="translate(-1.000000, 0.000000)">
+            <g id="Paper" stroke="#FFFFFF" stroke-width="3.07800007" fill="#D8D8D8" fill-opacity="0">
                 <use id="Rectangle-74" mask="url(#mask-2)" xlink:href="#path-1"></use>
             </g>
             <path d="M13.9765486,10.243528 C14.1726683,10.0987855 14.3550256,9.93445357 14.5190215,9.75360257 C14.5813605,9.68485662 14.6410463,9.61372376 14.6978263,9.54037264 C15.1176603,8.99801192 15.3786335,8.33437511 15.3786335,7.61763959 C15.3786335,5.78584845 13.8522563,4.30088832 11.9693745,4.30088832 C10.5829182,4.30088832 9.38976165,5.10604628 8.85698141,6.26195943 M8.70165442,6.66882948 C8.60956936,6.96943745 8.56011557,7.28791995 8.56011557,7.61763959 C8.56011557,8.34939928 8.83214447,9.02581083 9.26753279,9.57431896 M9.59407963,9.93307631 C10.2366527,10.5508139 11.1030136,10.9343909 11.9693745,10.9343909 C12.5137525,10.9343909 13.0581304,10.7829455 13.5469894,10.5171233" id="Pie" stroke="#FFFFFF" stroke-width="2.82736932" fill-opacity="0" fill="#D8D8D8"></path>
-            <g id="Words" transform="translate(4.156489, 14.251142)" fill="#FFFFFF">
-                <rect id="Rectangle-5" x="0" y="2.07296954" width="12.2165113" height="1.10558376" rx="0.552791878"></rect>
-                <rect id="Rectangle-5" x="0" y="0" width="11.9324063" height="1.10558376" rx="0.552791878"></rect>
-                <rect id="Rectangle-5" x="0" y="6.21890863" width="15.1996128" height="1.10558376" rx="0.552791878"></rect>
-                <rect id="Rectangle-5" x="0" y="4.14593909" width="14.4893506" height="1.10558376" rx="0.552791878"></rect>
+            <g id="Words" transform="translate(5.156489, 14.251142)" fill="#FFFFFF">
+                <rect id="Rectangle-5" x="0" y="2.07296954" width="10.3549462" height="1.10558376" rx="0.552791878"></rect>
+                <rect id="Rectangle-5" x="0" y="5.68434189e-14" width="10.087305" height="1.10558376" rx="0.552791878"></rect>
+                <rect id="Rectangle-5" x="0" y="6.21890863" width="13.1051898" height="1.10558376" rx="0.552791878"></rect>
+                <rect id="Rectangle-5" x="0" y="4.14593909" width="12.4499303" height="1.10558376" rx="0.552791878"></rect>
             </g>
-            <g id="Mag" transform="translate(17.104972, 11.614213)" fill="#FFFFFF">
+            <g id="Mag" transform="translate(16.000000, 11.500000)" fill="#FFFFFF">
                 <ellipse id="Oval-1" stroke="#FFFFFF" stroke-width="0.5" fill-opacity="0" cx="3.40925896" cy="3.31675127" rx="3.40925896" ry="3.31675127"></ellipse>
                 <ellipse id="Oval-2" cx="3.62233764" cy="7.94705867" rx="0.639236054" ry="0.0697744105"></ellipse>
                 <rect id="Rectangle-10" x="3.12515404" y="8.1536802" width="0.994367196" height="5.66611675"></rect>
-                <path id="Combined-Shape"></path>
+                <path d="M4.2615737,13.9579949 C4.13397654,14.1248399 3.89548786,14.2370926 3.62233764,14.2370926 C3.34918742,14.2370926 3.11069874,14.1248399 2.98310159,13.9579949 L4.2615737,13.9579949 Z" id="Combined-Shape"></path>
                 <rect id="Rectangle-9" x="3.40925896" y="6.49530457" width="0.42615737" height="1.10558376"></rect>
             </g>
         </g>

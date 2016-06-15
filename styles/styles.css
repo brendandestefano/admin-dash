@@ -50,42 +50,56 @@ a {
   background: #47d2ff; }
   .vertical-navbar__item.active .vertical-navbar__name, .vertical-navbar__item:hover .vertical-navbar__name {
     visibility: visible; }
-.vertical-navbar__item:first-of-type .vertical-navbar__icon {
-  padding-top: .85em; }
 
 .vertical-navbar__profile-wrapper {
   height: 100%; }
-  .vertical-navbar__profile-wrapper .vertical-navbar__icon {
-    z-index: 1;
-    position: absolute;
-    visibility: visible;
-    left: 50%;
-    margin-left: -0.875em; }
-  .vertical-navbar__profile-wrapper .vertical-navbar__name {
-    z-index: 1;
-    visibility: visible;
-    position: absolute;
-    top: 4.125em; }
-  .vertical-navbar__profile-wrapper:hover .vertical-navbar__overlay-wrapper {
+  .vertical-navbar__profile-wrapper:hover .vertical-navbar__overlay-wrapper--profile {
     bottom: 0 !important;
     display: block; }
 
-.vertical-navbar__overlay-wrapper {
+.vertical-navbar__profile-wrapper .vertical-navbar__name,
+.vertical-navbar__school-logo-wrapper .vertical-navbar__name {
+  z-index: 1;
+  visibility: visible;
   position: absolute;
-  bottom: -6.625em;
+  top: 4.125em; }
+.vertical-navbar__profile-wrapper .vertical-navbar__icon,
+.vertical-navbar__school-logo-wrapper .vertical-navbar__icon {
+  z-index: 1;
+  position: absolute;
+  visibility: visible;
+  left: 50%;
+  margin-left: -0.875em; }
+
+.vertical-navbar__school-logo-wrapper:hover .vertical-navbar__overlay-wrapper--school-logo {
+  top: 0 !important;
+  display: block; }
+
+.vertical-navbar__overlay-wrapper--profile {
+  position: absolute;
   left: 0;
   right: 0;
-  height: 6.625em;
   -moz-transition: bottom 0.6s ease-in-out;
   -ms-transition: bottom 0.6s ease-in-out;
   -o-transition: bottom 0.6s ease-in-out;
   transition: bottom 0.6s ease-in-out;
   -webkit-transition: bottom 0.6s ease-in-out; }
 
+.vertical-navbar__overlay-wrapper--school-logo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  -moz-transition: top 0.6s ease-in-out;
+  -ms-transition: top 0.6s ease-in-out;
+  -o-transition: top 0.6s ease-in-out;
+  transition: top 0.6s ease-in-out;
+  -webkit-transition: top 0.6s ease-in-out; }
+
 .vertical-navbar__icon {
   display: block;
-  margin: 0 auto 1em;
-  padding-top: .75em; }
+  margin: 0 auto .5em;
+  padding-top: .5em;
+  width: 1.5em; }
 
 .vertical-navbar__profile-img {
   position: absolute;
@@ -101,9 +115,6 @@ a {
   left: 0;
   right: 0;
   bottom: 0; }
-
-.vertical-navbar__overlay {
-  height: 6.625em; }
 
 .dashboard-banner-overlay {
   opacity: .5; }
@@ -129,7 +140,8 @@ a {
   background-repeat: no-repeat; }
 
 .dashboard-background-banner {
-  height: 9.375em;
+  max-height: 6.375em;
+  height: 100%;
   position: relative; }
 
 .dashboard-chart {
@@ -146,6 +158,12 @@ a {
     display: block;
     clear: both; }
 
+.change-triangle {
+  position: absolute;
+  top: 0.188em;
+  width: 0.938em;
+  margin-left: 0.313em; }
+
 .dashboard-main-content {
   width: 91.52542%;
   float: right;
@@ -159,24 +177,12 @@ a {
     clear: both; }
 
 .dashboard-content-feed {
-  width: 59.32203%;
+  width: 76.27119%;
   float: left;
   max-width: 75em;
   margin-left: auto;
   margin-right: auto; }
   .dashboard-content-feed:after {
-    content: " ";
-    display: block;
-    clear: both; }
-
-.dashboard-stats-feed {
-  width: 40.67797%;
-  float: right;
-  margin-right: 0;
-  max-width: 75em;
-  margin-left: auto;
-  margin-right: auto; }
-  .dashboard-stats-feed:after {
     content: " ";
     display: block;
     clear: both; }
@@ -190,15 +196,6 @@ a {
     content: " ";
     display: block;
     clear: both; }
-
-.dashboard-main-content__school-name {
-  color: #FFF;
-  margin: 0;
-  font-size: 3em;
-  padding: .95em .75em 0;
-  font-weight: 300;
-  z-index: 2;
-  position: relative; }
 
 .dashboard-main-content__card {
   max-width: 75em;
@@ -220,10 +217,24 @@ a {
   .dashboard-main-content__card:hover {
     box-shadow: 1px 1px 8px #999; }
 
-.dashboard-main-content__card-wrapper {
-  padding: 0.625em;
+.dashboard-main-content__cards-wrapper {
+  padding: 0.625em; }
+
+.card-row-wrapper {
+  max-width: 75em;
+  margin-left: auto;
+  margin-right: auto;
   border-bottom: 1px solid #EEE;
-  border-top: 1px solid #EEE; }
+  padding-bottom: 0.625em;
+  padding-top: 0.625em; }
+  .card-row-wrapper:after {
+    content: " ";
+    display: block;
+    clear: both; }
+  .card-row-wrapper.no-border {
+    border: 0; }
+  .card-row-wrapper.no-padding-top {
+    padding-top: 0; }
 
 .dashboard-main-content__count {
   text-align: center;
@@ -290,7 +301,7 @@ a {
   margin: 0 auto;
   visibility: hidden;
   text-align: center;
-  padding: 0 0 1em; }
+  padding: 0 0 .5em; }
 
 .category-text {
   text-align: center;
@@ -301,13 +312,23 @@ a {
 .dashboard-main-content__category-text {
   margin-bottom: 0;
   margin-top: 1em;
-  color: #777; }
+  color: #777;
+  position: relative; }
 
 .chart-title {
   font-size: 1em;
   color: #555;
   text-align: center;
   margin-top: 0; }
+
+.dashboard-main-content__school-name {
+  color: #FFF;
+  margin: 0;
+  font-size: 3em;
+  padding: .47em .75em;
+  font-weight: 300;
+  z-index: 2;
+  position: relative; }
 
 .dashboard-sidebar__widgets-wrapper {
   overflow-y: scroll;

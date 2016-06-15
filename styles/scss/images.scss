@@ -1,7 +1,8 @@
 .vertical-navbar__icon{
 	display: block;
-    margin: 0 auto 1em;
-    padding-top: .75em;
+    margin: 0 auto .5em;
+	padding-top: .5em;
+	width: 1.5em;
 }
 .vertical-navbar__profile-img{
 	position: absolute;
@@ -17,9 +18,6 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-}
-.vertical-navbar__overlay{
-    height: 6.625em;
 }
 .dashboard-banner-overlay{
 	opacity: .5;
@@ -45,11 +43,18 @@
     background-repeat: no-repeat;
 }
 .dashboard-background-banner{
-	height: 9.375em;
+	max-height: 6.375em;
+    height: 100%;
 	position: relative;
 }
 .dashboard-chart{
 	@include container;
 	@include span(3 of 5 at 2 isolate);
 	margin-bottom: 1em;
+}
+.change-triangle{
+	position: absolute;
+    top: 0.188em;
+    width: 0.938em;
+    margin-left: 0.313em;
 }

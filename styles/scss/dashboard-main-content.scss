@@ -3,25 +3,12 @@
 	@include container;
 }
 .dashboard-content-feed{
-	@include span(7 of 12 first no-gutters wide);
-	@include container;
-}
-.dashboard-stats-feed{
-	@include span(5 of 12 last no-gutters);
+	@include span(9 of 12 first no-gutters wide);
 	@include container;
 }
 .dashboard-chart-wrapper{
 	@include container;
 	padding-top: 1em;
-}
-.dashboard-main-content__school-name{
-	color: #FFF;
-	margin: 0;
-	font-size: 3em;
-	padding: .95em .75em 0;
-	font-weight: 300;
-	z-index: 2;
-	position: relative;
 }
 .dashboard-main-content__card{
 	@include container;
@@ -39,10 +26,20 @@
 		box-shadow: 1px 1px 8px #999;
 	}
 }
-.dashboard-main-content__card-wrapper{
+.dashboard-main-content__cards-wrapper{
 	padding: 0.625em;
+}
+.card-row-wrapper{
+	@include container;
 	border-bottom: 1px solid #EEE;
-	border-top: 1px solid #EEE;
+	padding-bottom: 0.625em;
+	padding-top: 0.625em;
+	&.no-border{
+		border: 0;
+	}
+	&.no-padding-top{
+		padding-top: 0;
+	}
 }
 .dashboard-main-content__count{
 	text-align: center;

@@ -17,65 +17,86 @@
 <body>
 	<div class="container">
 		<div class="vertical-navbar">
-			<div class="vertical-navbar__item full-width active">
-				<a href="">
-					<div style="position:relative">
-						<img class="vertical-navbar__icon" src="img/icon-dashboard.svg">
-						<div class="notification hidden"><span></span></div>
-						<p class="dashboard__teaser-text vertical-navbar__name full-width">Dashboard</p>
-					</div>	
-				</a>
+			<div class="vertical-navbar__item vertical-navbar__school-logo-wrapper">
+				<!-- src based off school logo -->
+				<img class="full-width school-logo" src="https://upload.wikimedia.org/wikipedia/en/a/ad/Colby_college_bicentennial_seal.png">
+				<!-- -->
+				<div class="vertical-navbar__overlay-wrapper vertical-navbar__overlay-wrapper--school-logo">
+					<div class="overlay vertical-navbar__overlay"></div>
+					<img class="vertical-navbar__icon" src="img/icon-profile.svg">
+					<p class="dashboard__teaser-text vertical-navbar__name full-width">School</p>
+				</div>
 			</div>
-			<div class="vertical-navbar__item full-width">
-				<a href="">
-					<div style="position:relative">
-						<img class="vertical-navbar__icon" src="img/icon-reports.svg">
-						<div class="notification hidden"><span></span></div>
-						<p class="dashboard__teaser-text vertical-navbar__name full-width">Reports</p>
-					</div>	
-				</a>
-			</div>
-			<div class="vertical-navbar__item full-width">
-				<a href="">
-					<div style="position:relative">
-						<img class="vertical-navbar__icon" src="img/icon-event.svg">
-						<div class="notification"><span>2</span></div>
-						<p class="dashboard__teaser-text vertical-navbar__name full-width">Events</p>
-					</div>
-				</a>
-			</div>
-			<div class="vertical-navbar__item full-width">
-				<a href="">
-					<div style="position:relative">
-						<img class="vertical-navbar__icon" src="img/icon-jobs.svg">
-						<div class="notification hidden"><span></span></div>
-						<p class="dashboard__teaser-text vertical-navbar__name full-width">Jobs</p>
-					</div>
-				</a>
-			</div>
-			<div class="vertical-navbar__item full-width">
-				<a href="">
-					<div style="position:relative">
-						<img class="vertical-navbar__icon" src="img/icon-companies.svg">
-						<div class="notification hidden"><span></span></div>
-						<p class="dashboard__teaser-text vertical-navbar__name full-width">Companies</p>
-					</div>	
-				</a>
-			</div>
-			<div class="vertical-navbar__item full-width">
-				<a href="">
-					<div style="position:relative">
-						<img class="vertical-navbar__icon" src="img/icon-notes.svg">
-						<div class="notification hidden"><span></span></div>
-						<p class="dashboard__teaser-text vertical-navbar__name full-width">Notes</p>
-					</div>	
-				</a>
+			<div class="vertical-navbar__links-wrapper">
+				<div class="vertical-navbar__item full-width active">
+					<a href="">
+						<div style="position:relative">
+							<img class="vertical-navbar__icon" src="img/icon-dashboard.svg">
+							<div class="notification hidden"><span></span></div>
+							<p class="dashboard__teaser-text vertical-navbar__name full-width">Dashboard</p>
+						</div>	
+					</a>
+				</div>
+				<div class="vertical-navbar__item full-width">
+					<a href="">
+						<div style="position:relative">
+							<img class="vertical-navbar__icon" src="img/icon-reports.svg">
+							<div class="notification hidden"><span></span></div>
+							<p class="dashboard__teaser-text vertical-navbar__name full-width">Reports</p>
+						</div>	
+					</a>
+				</div>
+				<div class="vertical-navbar__item full-width">
+					<a href="">
+						<div style="position:relative">
+							<img class="vertical-navbar__icon" src="img/icon-event.svg">
+							<div class="notification"><span>2</span></div>
+							<p class="dashboard__teaser-text vertical-navbar__name full-width">Events</p>
+						</div>
+					</a>
+				</div>
+				<div class="vertical-navbar__item full-width">
+					<a href="">
+						<div style="position:relative">
+							<img class="vertical-navbar__icon" src="img/icon-jobs.svg">
+							<div class="notification hidden"><span></span></div>
+							<p class="dashboard__teaser-text vertical-navbar__name full-width">Jobs</p>
+						</div>
+					</a>
+				</div>
+				<div class="vertical-navbar__item full-width">
+					<a href="">
+						<div style="position:relative">
+							<img class="vertical-navbar__icon" src="img/icon-companies.svg">
+							<div class="notification hidden"><span></span></div>
+							<p class="dashboard__teaser-text vertical-navbar__name full-width">Companies</p>
+						</div>	
+					</a>
+				</div>
+				<div class="vertical-navbar__item full-width">
+					<a href="">
+						<div style="position:relative">
+							<img class="vertical-navbar__icon" src="img/icon-notes.svg">
+							<div class="notification hidden"><span></span></div>
+							<p class="dashboard__teaser-text vertical-navbar__name full-width">Notes</p>
+						</div>	
+					</a>
+				</div>
+				<div class="vertical-navbar__item full-width">
+					<a href="">
+						<div style="position:relative">
+							<img class="vertical-navbar__icon" src="img/icon-requests.svg">
+							<div class="notification hidden"><span></span></div>
+							<p class="dashboard__teaser-text vertical-navbar__name full-width">Requests</p>
+						</div>	
+					</a>
+				</div>
 			</div>
 			<div class="vertical-navbar__profile-wrapper">
-				<!-- src based off school logo -->
-				<img class="vertical-navbar__profile-img" src="https://upload.wikimedia.org/wikipedia/en/a/ad/Colby_college_bicentennial_seal.png">
+				<!-- src based off user avatar -->
+				<img class="vertical-navbar__profile-img" src="img/profile-icon.jpg">
 				<!-- -->
-				<div class="vertical-navbar__overlay-wrapper">
+				<div class="vertical-navbar__overlay-wrapper vertical-navbar__overlay-wrapper--profile">
 					<div class="overlay vertical-navbar__overlay"></div>
 					<img class="vertical-navbar__icon" src="img/icon-profile.svg">
 					<p class="dashboard__teaser-text vertical-navbar__name full-width">Profile</p>
@@ -89,7 +110,108 @@
 					<h2 class="dashboard-main-content__school-name">Colby College</h2>
 					<div class="overlay dashboard-banner-overlay"></div>
 				</div>
-				<div class="dashboard-widgets-wrapper full-width">
+				<div class="dashboard-main-content__cards-wrapper container">
+					<div class="card-row-wrapper no-padding-top">
+						<div class="dashboard-main-content__card first">
+							<p class="category-text dashboard-main-content__category-text">Active Users 
+								<img src="img/triangle-positive.svg" class="change-triangle">
+							</p>
+							<img src="img/trending-graph-example-positive.svg">
+							<p class="dashboard-main-content__count">5,232</p>
+						</div>
+						<div class="dashboard-main-content__card last no-border-right">
+							<p class="category-text dashboard-main-content__category-text">Mentors
+								<img src="img/triangle-negative.svg" class="change-triangle">
+							</p>
+							<p class="dashboard-main-content__count">2,345</p>
+						</div>
+					</div>
+					<div class="card-row-wrapper">
+						<div class="dashboard-main-content__card first">
+							<p class="category-text dashboard-main-content__category-text">Messages
+								<img src="img/triangle-negative.svg" class="change-triangle">
+							</p>
+							<p class="dashboard-main-content__count">38,343</p>
+						</div>
+						<div class="dashboard-main-content__card last no-border-right">
+							<p class="category-text dashboard-main-content__category-text">Jobs
+								<img src="img/triangle-positive.svg" class="change-triangle">
+							</p>
+							<p class="dashboard-main-content__count">245</p>
+						</div>
+					</div>
+					<div class="card-row-wrapper no-border">
+						<div class="dashboard-main-content__card first">
+							<p class="category-text dashboard-main-content__category-text">Companies
+								<img src="img/triangle-positive.svg" class="change-triangle">
+							</p>
+							<p class="dashboard-main-content__count">38</p>
+						</div>
+						<div class="dashboard-main-content__card last no-border-right">
+							<p class="category-text dashboard-main-content__category-text">Events
+								<img src="img/triangle-positive.svg" class="change-triangle">
+							</p>
+							<p class="dashboard-main-content__count">61</p>
+						</div>
+					</div>
+				</div>	
+				<div class="dashboard-scrollable-stats" style="display:none;">
+					<div class="dashboard-chart-wrapper">
+						<p class="chart-title">Engagement by Industry</p>
+						<div class="dashboard-chart">
+							<img src="img/chart1.png" class="full-width">
+						</div>
+					</div>
+					<div class="dashboard-main-content__card-wrapper container">
+						<div class="dashboard-main-content__card first">
+							<p class="category-text dashboard-main-content__category-text">Active Users</p>
+							<p class="dashboard-main-content__count">5,232</p>
+						</div>
+						<div class="dashboard-main-content__card last no-border-right">
+							<p class="category-text dashboard-main-content__category-text">Mentors</p>
+							<p class="dashboard-main-content__count">2,345</p>
+						</div>
+					</div>
+					<div class="dashboard-chart-wrapper">
+						<p class="chart-title">Engagement by Role</p>
+						<div class="dashboard-chart">
+							<img src="img/chart2.png" class="full-width">
+						</div>
+					</div>
+					<div class="dashboard-main-content__card-wrapper container">
+						<div class="dashboard-main-content__card first">
+							<p class="category-text dashboard-main-content__category-text">Messages</p>
+							<p class="dashboard-main-content__count">38,343</p>
+						</div>
+						<div class="dashboard-main-content__card last no-border-right">
+							<p class="category-text dashboard-main-content__category-text">Jobs</p>
+							<p class="dashboard-main-content__count">245</p>
+						</div>
+					</div>
+					<div class="dashboard-chart-wrapper">
+						<p class="chart-title">Mentor Categories</p>
+						<div class="dashboard-chart">
+							<img src="img/chart3.png" class="full-width">
+						</div>
+					</div>
+					<div class="dashboard-main-content__card-wrapper container">
+						<div class="dashboard-main-content__card first">
+							<p class="category-text dashboard-main-content__category-text">Companies</p>
+							<p class="dashboard-main-content__count">38</p>
+						</div>
+						<div class="dashboard-main-content__card last no-border-right">
+							<p class="category-text dashboard-main-content__category-text">Events</p>
+							<p class="dashboard-main-content__count">61</p>
+						</div>
+					</div>
+
+				</div>	
+			</div>
+				<div class="dashboard-widgets-wrapper full-width"  style="display:none;">
+					<div class="dashboard-search-bar-wrapper">
+					<img src="img/icon-mag-glass.svg">
+					<input type="text" placeholder="Search">
+				</div>
 					<div class="dashboard-single-widget">
 						<h4 class="dashboard__teaser-text">Trending Mentors</h4>
 						<div class="dashboard-single-widget__partial">
@@ -381,62 +503,6 @@
 						<button>See More</button>
 					</div>
 				</div>
-			</div>
-			<div class="dashboard-stats-feed">
-				<div class="dashboard-search-bar-wrapper">
-					<img src="img/icon-mag-glass.svg">
-					<input type="text" placeholder="Search">
-				</div>
-				<div class="dashboard-scrollable-stats">
-					<div class="dashboard-chart-wrapper">
-						<p class="chart-title">Engagement by Industry</p>
-						<div class="dashboard-chart">
-							<img src="img/chart1.png" class="full-width">
-						</div>
-					</div>
-					<div class="dashboard-main-content__card-wrapper container">
-						<div class="dashboard-main-content__card first">
-							<p class="category-text dashboard-main-content__category-text">Active Users</p>
-							<p class="dashboard-main-content__count">5,232</p>
-						</div>
-						<div class="dashboard-main-content__card last no-border-right">
-							<p class="category-text dashboard-main-content__category-text">Mentors</p>
-							<p class="dashboard-main-content__count">2,345</p>
-						</div>
-					</div>
-					<div class="dashboard-chart-wrapper">
-						<p class="chart-title">Engagement by Role</p>
-						<div class="dashboard-chart">
-							<img src="img/chart2.png" class="full-width">
-						</div>
-					</div>
-					<div class="dashboard-main-content__card-wrapper container">
-						<div class="dashboard-main-content__card first">
-							<p class="category-text dashboard-main-content__category-text">Messages</p>
-							<p class="dashboard-main-content__count">38,343</p>
-						</div>
-						<div class="dashboard-main-content__card last no-border-right">
-							<p class="category-text dashboard-main-content__category-text">Jobs</p>
-							<p class="dashboard-main-content__count">245</p>
-						</div>
-					</div>
-					<div class="dashboard-chart-wrapper">
-						<p class="chart-title">Mentor Categories</p>
-						<div class="dashboard-chart">
-							<img src="img/chart3.png" class="full-width">
-						</div>
-					</div>
-					<div class="dashboard-main-content__card-wrapper container">
-						<div class="dashboard-main-content__card first">
-							<p class="category-text dashboard-main-content__category-text">Companies</p>
-							<p class="dashboard-main-content__count">38</p>
-						</div>
-						<div class="dashboard-main-content__card last no-border-right">
-							<p class="category-text dashboard-main-content__category-text">Events</p>
-							<p class="dashboard-main-content__count">61</p>
-						</div>
-					</div>
-				</div>	
 			</div>
 		</div>
 	</div>

@@ -11,7 +11,7 @@
 	margin: 0 auto;
 	visibility: hidden;
 	text-align: center;
-	padding: 0 0 1em;
+	padding: 0 0 .5em;
 }
 .category-text{
 	text-align: center;
@@ -23,10 +23,20 @@
 	margin-bottom: 0;
 	margin-top: 1em;
 	color: #777;
+	position: relative;
 }
 .chart-title{
 	font-size: 1em;
 	color: #555;
 	text-align: center;
 	margin-top: 0;
+}
+.dashboard-main-content__school-name{
+	color: #FFF;
+	margin: 0;
+	font-size: 3em;
+	padding: .47em .75em;
+	font-weight: 300;
+	z-index: 2;
+	position: relative;
 }

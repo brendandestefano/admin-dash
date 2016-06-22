@@ -21,22 +21,48 @@
 }
 .dashboard-main-content__category-text{
 	margin-bottom: 0;
-	margin-top: 1em;
+	margin-top: 0.583em;
 	color: #777;
+	font-size: 1.5em;
 	position: relative;
+	img{
+		position: absolute;
+		margin-left: -2.083em;
+		width: 1.667em;
+		top: -0.208em;
+	}
 }
 .chart-title{
-	font-size: 1em;
-	color: #555;
-	text-align: center;
-	margin-top: 0;
+	font-size: 1.25em;
+    color: #777;
+    text-align: center;
+    margin-top: 2em;
+    font-weight: 300;
+    margin-bottom: 1em;
 }
 .dashboard-main-content__school-name{
 	color: #FFF;
 	margin: 0;
 	font-size: 3em;
-	padding: .47em .75em;
 	font-weight: 300;
 	z-index: 2;
 	position: relative;
+}
+.dashboard-main-content__change{
+	font-size: 1em;
+	text-align: center;
+	margin: 0;
+	margin-bottom: 1em;
+	span{
+		&.positive{
+			color: #178817;
+		}
+		&.negative{
+			color: #CC171B;
+		}
+		&.timeframe{
+			font-size: .65em;
+			color: #777;
+		}
+	}
 }

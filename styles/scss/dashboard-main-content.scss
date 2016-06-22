@@ -1,23 +1,23 @@
 .dashboard-main-content{
 	@include span(11 of 12 last no-gutters);
 	@include container;
+	height: 100vh;
 }
 .dashboard-content-feed{
 	@include span(9 of 12 first no-gutters wide);
 	@include container;
-}
-.dashboard-chart-wrapper{
-	@include container;
-	padding-top: 1em;
+	overflow: scroll;
+	height: 100%;
 }
 .dashboard-main-content__card{
 	@include container;
 	border-right: 1px solid #EEE;
+	@include span(4 no-gutters wide);
 	&.first{
-		@include span(6 no-gutters);
+		@include span(4 no-gutters);
 	}
 	&.last{
-		@include span(6 no-gutters wide);
+		@include span(4 no-gutters wide);
 	}
 	&.no-border-right{
 		border-right: 0;
@@ -43,23 +43,43 @@
 }
 .dashboard-main-content__count{
 	text-align: center;
-    margin-top: .5em;
+    margin-top: 0;
     color: #777;
     font-size: 2em;
     font-weight: 300;
+    margin-bottom: .25em;
+    padding-top: 0.438em;
 }
-.dashboard-widgets-wrapper{
-	background: #E3E8E9;
-	padding: 0.938em;
-	height: calc(100vh - 150px);
-	overflow-y: scroll;
-	.dashboard__teaser-text{
-		color: #666;
-		padding: 0;
-		font-weight: 400;
-	}
+.dashboard-main-content__chart-wrapper{
+	max-width: 15.625em;
+	max-height: 4.375em;
+	display: block;
+	margin: 0 auto;
 }
 .dashboard-scrollable-stats{
 	height: calc(100vh - 52px);
 	overflow-y: scroll;
+}
+.lower-charts-wrapper{
+	@include container;
+	@include span(12 no-gutters);
+	hr{
+		border: 1px solid #CCC;
+		width: 60%;
+		margin-top: 2em;
+	}
+}
+.lower-chart{
+	@include container;
+	@include span(6 of 12);
+    height: 27.375em;
+    &.first{
+		@include span(6 of 12 first);
+	}
+	&.second{
+		@include span(6 of 12 last);
+	}
+	&:last-of-type{
+		@include span(12);
+	}
 }

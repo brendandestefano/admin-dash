@@ -1,8 +1,9 @@
 .dashboard-sidebar{
 	@include container;
-	@include span(5 of 12 last no-gutters);
-	height: 100vh;
+	@include span(3 of 12 last no-gutters);
+	background: #E3E8E9;
 	overflow: scroll;
+	height: 100%;
 }
 .dashboard-search-bar-wrapper{
 	background: #D9DFE1;

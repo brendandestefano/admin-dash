@@ -4,7 +4,7 @@
 	@include gradient($brand-color, $brand-color, bottom);
 	height: 100vh;
 	overflow: hidden;
-	position: relative;
+	position: fixed;
 }
 .vertical-navbar__item{
 	a{

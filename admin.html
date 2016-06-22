@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="styles/admin.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="charts.js"></script>
+	<script type="text/javascript" src="admin.js"></script>
+	<link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+	<script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+	<style type="text/css">
+		/*
+			URL based off web app banner. Changes per school
+		*/
+		.banner{
+			background: url("https://www.filepicker.io/api/file/xwfciiM0Sw2iqkc2SDCY") no-repeat center/cover;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar">
+			<div class="js-school-logo-target is-hoverable-logo top">
+				<!-- src based off school logo -->
+				<img class="js-school-logo" src="https://upload.wikimedia.org/wikipedia/en/a/ad/Colby_college_bicentennial_seal.png">
+				<!-- -->
+				<div class="overlay-wrapper animate-top js-school-logo-target">
+					<div class="overlay"></div>
+					<img class="icon-small icon-overlay" src="img/icons/profile.svg">
+					<p class="text-navbar text-overlay">School</p>
+				</div>
+			</div>
+			<div class="navbar-item active">
+				<a href="/">
+					<div class="icon-small">
+						<img src="img/icons/dashboard.svg">
+						<div class="notification hidden"><span></span></div>
+					</div>
+					<p class="text-navbar">Dashboard</p>
+				</a>
+			</div>
+			<div class="navbar-item">
+				<a href="/reports">
+					<div class="icon-small">
+						<img src="img/icons/reports.svg">
+						<div class="notification hidden"><span></span></div>
+					</div>
+					<p class="text-navbar">Reports</p>
+				</a>
+			</div>
+			<div class="navbar-item">
+				<a href="/events">
+					<div class="icon-small">
+						<img src="img/icons/events.svg">
+						<div class="notification"><span>2</span></div>
+					</div>
+					<p class="text-navbar">Events</p>
+				</a>
+			</div>
+			<div class="navbar-item">
+				<a href="/jobs">
+					<div class="icon-small">
+						<img src="img/icons/jobs.svg">
+						<div class="notification hidden"><span></span></div>
+					</div>
+					<p class="text-navbar">Jobs</p>
+				</a>
+			</div>
+			<div class="navbar-item">
+				<a href="/companies">
+					<div class="icon-small">
+						<img src="img/icons/companies.svg">
+						<div class="notification hidden"><span></span></div>
+					</div>
+					<p class="text-navbar">Companies</p>
+				</a>
+			</div>
+			<div class="navbar-item">
+				<a href="/messages">
+					<div class="icon-small">
+						<img src="img/icons/messages.svg">
+						<div class="notification hidden"><span></span></div>
+					</div>
+					<p class="text-navbar">Messages</p>
+				</a>
+			</div>
+			<div class="overlay-wrapper navbar-avatar-wrapper js-avatar-target is-hoverable-logo bottom">
+				<img class="avatar js-avatar" src="img/profile-icon.jpg">
+				<div class="overlay-wrapper animate-bottom js-avatar-target">
+					<div class="overlay"></div>
+					<img class="icon-small icon-overlay" src="img/icons/profile.svg">
+					<p class="text-navbar text-overlay">Profile</p>
+				</div>
+			</div>
+		</nav>
+		<div class="main">
+			<div class="content">
+				<div class="banner">
+					<h2 class="header">Colby College</h2>
+					<div class="overlay"></div>
+				</div>
+				<div class="cards-wrapper">
+					<div class="card-row">
+						<div class="card">
+							<a href="/users">
+								<p class="text-category">
+									<img class="icon-medium" src="img/icon-users.svg" /> Active Users
+								</p>
+								<div class="chart-wrapper">
+									<div id="active-users-chart" class="ct-chart ct-major-twelfth positive"></div>
+								</div>
+								<p class="text-total-count">5,232</p>
+								<p class="text-data-change">
+									<img src="img/triangle-positive.svg" class="change-triangle">
+									<span class="positive">345 &bull; 18.7%</span><br />
+									<span class="timeframe">Monthly Change</span>
+								</p>
+							</a>	
+						</div>
+						<div class="card">
+							<a href="/mentors">
+								<p class="text-category">
+									<img class="icon-medium" src="img/icon-mentors.svg" /> Mentors
+								</p>
+								<div class="chart-wrapper">
+									<div id="mentors-chart" class="ct-chart ct-major-twelfth negative"></div>
+								</div>
+								<p class="text-total-count">2,345</p>
+								<p class="text-data-change">
+									<img src="img/triangle-negative.svg" class="change-triangle">
+									<span class="negative">13 &bull; 1.7%</span><br />
+									<span class="timeframe">Monthly Change</span>
+								</p>
+							</a>	
+						</div>
+						<div class="card">
+							<a href="/messages">
+								<p class="text-category">
+									<img class="icon-medium" src="img/icon-messages.svg" /> Messages
+								</p>
+								<div class="chart-wrapper">
+									<div id="messages-chart" class="ct-chart ct-major-twelfth negative"></div>
+								</div>
+								<p class="text-total-count">38,343</p>
+								<p class="text-data-change">
+									<img src="img/triangle-negative.svg" class="change-triangle">
+									<span class="negative">1.1K &bull; 12.7%</span><br />
+									<span class="timeframe">Monthly Change</span>
+								</p>
+							</a>	
+						</div>
+					</div>
+					<div class="card-row">
+						<div class="card">
+							<a href="/jobs">
+								<p class="text-category">
+									<img class="icon-medium" src="img/icon-jobs-2.svg" /> Jobs
+								</p>
+								<div class="chart-wrapper">
+									<div id="jobs-chart" class="ct-chart ct-major-twelfth positive"></div>
+								</div>
+								<p class="text-total-count">245</p>
+								<p class="text-data-change">
+									<img src="img/triangle-positive.svg" class="change-triangle">
+									<span class="positive">12 &bull; 14.3%</span><br />
+									<span class="timeframe">Monthly Change</span>
+								</p>
+							</a>	
+						</div>
+						<div class="card">
+							<a href="/companies">
+								<p class="text-category">
+									<img class="icon-medium" src="img/icon-companies-2.svg" /> Companies
+								</p>
+								<div class="chart-wrapper">
+									<div id="companies-chart" class="ct-chart ct-major-twelfth positive"></div>
+								</div>
+								<p class="text-total-count">38</p>
+								<p class="text-data-change">
+									<img src="img/triangle-positive.svg" class="change-triangle">
+									<span class="positive">5 &bull; 20.1%</span><br />
+									<span class="timeframe">Monthly Change</span>
+								</p>
+							</a>
+						</div>
+						<div class="card">
+							<a href="/events">
+								<p class="text-category">
+									<img class="icon-medium" src="img/icon-events.svg" /> Events
+								</p>
+								<div class="chart-wrapper">
+									<div id="events-chart" class="ct-chart ct-major-twelfth positive"></div>
+								</div>
+								<p class="text-total-count">61</p>
+								<p class="text-data-change">
+									<img src="img/triangle-positive.svg" class="change-triangle">
+									<span class="positive">7 &bull; 8.8%</span><br />
+									<span class="timeframe">Monthly Change</span>
+								</p>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="graphs-wrapper">
+					<hr />
+					<div class="graph">
+						<h6 class="text-chart-title">Engagement by Role</h6>
+						<div id="line-chart" class="ct-chart ct-square"></div>
+						<div class="line-legend"></div>
+					</div>
+					<div class="graph">
+						<h6 class="text-chart-title">Mentor Categories</h6>
+						<div id="pie-chart" class="ct-chart ct-square"></div>
+						<div class="pie-legend"></div>
+					</div>
+					<div class="graph">
+						<h6 class="text-chart-title">Engagement by Industry</h6>
+						<div id="bar-chart" class="ct-chart ct-square"></div>
+						<div class="bar-legend"></div>
+					</div>
+				</div>
+			</div>
+			<div class="engagement">
+				<div class="search-bar">
+					<img src="img/icon-mag-glass.svg">
+					<input type="text" placeholder="Search">
+				</div>
+				<div class="widgets-wrapper">
+					<div class="widget">
+						<h4 class="text-widget-header">Trending Mentors</h4>
+						<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/68.jpg">
+						<div class="user-details-wrapper">
+							<p class="text-user-name">Shawn Tee '10</p>
+							<p class="text-user-city">Boston, MA</p>
+							<p class="text-user-title">Systems Analyst | Fidelity Investments</p>
+						</div>
+						<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/men/48.jpg">
+						<div class="user-details-wrapper">
+							<p class="text-user-name">Joe Dimaggio '13</p>
+							<p class="text-user-city">Providence, RI</p>
+							<p class="text-user-title">Full-Stack Developer | Nike Corporation</p>
+						</div>
+						<img class="widget-avatar" src="https://randomuser.me/api/portraits/med/women/68.jpg">
+						<div class="user-details-wrapper">
+							<p class="text-user-name">Ronda Rousey '09</p>
+							<p class="text-user-city">Boston, MA</p>
+							<p class="text-user-title">Business Development Representative | Bank of America</p>
+						</div>
+						<button class="btn-widget">See More</button>
+					</div>
+					<hr />
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

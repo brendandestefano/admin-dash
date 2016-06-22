@@ -1,0 +1,15 @@
+.is-hoverable-logo:hover{
+	.overlay-wrapper{
+		display: block;
+	}
+	&.top{
+		.overlay-wrapper{
+			top: 0 !important;
+		}
+	}
+	&.bottom{
+		.overlay-wrapper{
+			bottom: 0 !important;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+.btn-widget{
+	font-size: 0.688rem;
+	margin: 0.9375rem auto 0;
+	display: block;
+	background: #EEE;
+	border: 1px solid #DDD;
+	padding: .5rem 2.5rem;
+	@include border-radius(1rem);
+	color: #666;
+	outline: 0;
+}

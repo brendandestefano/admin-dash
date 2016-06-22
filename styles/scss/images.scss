@@ -1,3 +1,88 @@
+.overlay-wrapper{
+	position: absolute;
+	left: 0;
+	right: 0;
+	&.animate-top{
+		@include transition(top, 0.6s, ease-in-out);
+	}
+	&.animate-bottom{
+		@include transition(bottom, 0.6s, ease-in-out);
+	}
+}
+.overlay{
+	background: #000;
+	opacity: .65;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.icon-small{
+	width: 1.5rem;
+}
+.icon-medium{
+	width: 2.5rem;
+}
+.icon-overlay{
+	z-index: 1;
+	position: absolute;
+	left: 50%;
+	margin-left: -0.875rem !important;
+}
+.navbar{
+	.icon-small{
+		display: block;
+		margin: 0 auto .5rem;
+		padding-top: .5rem;
+		position: relative;
+	}
+}
+.notification{
+	position: absolute;
+	background: #FF0000;
+	width: 1.25rem;
+	padding: 0.313rem;
+	top: 0.125rem;
+	right: -0.8125rem;
+	@include border-radius(50%);
+	&.hidden{
+		visibility: hidden;
+	}
+	span{
+		color: #FFF;
+		font-size: .65rem;
+		text-align: center;
+		display: block;
+	}
+}
+.navbar-avatar-wrapper{
+	height: 100%;
+	position: absolute;
+	bottom: 0 !important;
+	.avatar{
+		position: absolute;
+		bottom: 0;
+		border-bottom: 5px solid $brand-secondary-color;
+	}
+}
+.banner{
+	position: relative;
+}
+.change-triangle{
+	width: 0.5rem;
+	margin-bottom: 0.0625rem;
+}
+.widget-avatar{
+	@include border-radius(50%);
+	width: 1.875rem;
+	float: left;
+}
+
+
+
+
+
 .vertical-navbar__icon{
 	display: block;
     margin: 0 auto .5em;
@@ -10,34 +95,10 @@
 	width: 100%;
 	border-bottom: 5px solid $brand-secondary-color;
 }
-.overlay{
-	background: #000;
-    opacity: .35;
-    position: absolute;
-    top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
 .dashboard-banner-overlay{
 	opacity: .5;
 }
-.notification{
-	position: absolute;
-	background: #FF0000;
-	width: 1.25em;
-	padding: 0.313em;
-	@include border-radius(50%);
-	&.hidden{
-		visibility: hidden;
-	}
-	span{
-		color: #FFF;
-		font-size: .500em;
-		text-align: center;
-		display: block;
-	}
-}
+
 .background-banner{
     background-size: cover;
     background-repeat: no-repeat;

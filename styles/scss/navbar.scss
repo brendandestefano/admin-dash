@@ -1,0 +1,16 @@
+.navbar{
+	@include gradient($brand-color, $brand-color, bottom);
+	height: 100vh;
+	overflow: hidden;
+	position: fixed;
+	.navbar-item{
+		width: 100%;
+		&.active,
+		&:hover{
+			background: lighten($brand-color, 20%);
+			.text-navbar{
+				visibility: visible;
+			}
+		}
+	}
+}

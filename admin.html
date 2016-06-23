@@ -22,101 +22,85 @@
 	<div class="container">
 		<nav class="navbar">
 			<div class="menu-toggle">
-    <!--
-    A fake / hidden checkbox is used as click reciever,
-    so you can use the :checked selector on it.
-    -->
-    <input type="checkbox" onclick="fireZIndexHelper();"/>
-    
-    <!--
-    Some spans to act as a hamburger.
-    
-    They are acting like a real hamburger,
-    not that McDonalds stuff.
-    -->
-    <span class="burger-line"></span>
-    <span class="burger-line"></span>
-    <span class="burger-line"></span>
-    
-    <!--
-    Too bad the menu has to be inside of the button
-    but hey, it's pure CSS magic.
-    -->
-    <div class="menu">
-			<div class="js-school-logo-target hover-wrapper is-hoverable-logo top">
-				<!-- src based off school logo -->
-				<img class="js-school-logo" src="https://upload.wikimedia.org/wikipedia/en/a/ad/Colby_college_bicentennial_seal.png">
-				<!-- -->
-				<div class="overlay-wrapper animate-top js-school-logo-target">
-					<div class="overlay"></div>
-					<img class="icon-small icon-overlay" src="img/icons/profile.svg">
-					<p class="text-navbar text-overlay">School</p>
-				</div>
-			</div>
-			<div class="navbar-item active">
-				<a href="/">
-					<div class="icon-small">
-						<img src="img/icons/dashboard.svg">
-						<div class="notification hidden"><span></span></div>
+				<input type="checkbox" onclick="fireZIndexHelper();"/>
+				<span class="burger-line"></span>
+				<span class="burger-line"></span>
+				<span class="burger-line"></span>
+		    	<div class="menu">
+					<div class="js-school-logo-target hover-wrapper is-hoverable-logo top">
+						<!-- src based off school logo -->
+						<img class="js-school-logo" src="https://upload.wikimedia.org/wikipedia/en/a/ad/Colby_college_bicentennial_seal.png">
+						<!-- -->
+						<div class="overlay-wrapper animate-top js-school-logo-target">
+							<div class="overlay"></div>
+							<img class="icon-small icon-overlay" src="img/icons/profile.svg">
+							<p class="text-navbar text-overlay">School</p>
+						</div>
 					</div>
-					<p class="text-navbar">Dashboard</p>
-				</a>
-			</div>
-			<div class="navbar-item">
-				<a href="/reports">
-					<div class="icon-small">
-						<img src="img/icons/reports.svg">
-						<div class="notification hidden"><span></span></div>
+					<div class="navbar-item active">
+						<a href="/">
+							<div class="icon-small">
+								<img src="img/icons/dashboard.svg">
+								<div class="notification hidden"><span></span></div>
+							</div>
+							<p class="text-navbar">Dashboard</p>
+						</a>
 					</div>
-					<p class="text-navbar">Reports</p>
-				</a>
-			</div>
-			<div class="navbar-item">
-				<a href="/events">
-					<div class="icon-small">
-						<img src="img/icons/events.svg">
-						<div class="notification"><span>2</span></div>
+					<div class="navbar-item">
+						<a href="/reports">
+							<div class="icon-small">
+								<img src="img/icons/reports.svg">
+								<div class="notification hidden"><span></span></div>
+							</div>
+							<p class="text-navbar">Reports</p>
+						</a>
 					</div>
-					<p class="text-navbar">Events</p>
-				</a>
-			</div>
-			<div class="navbar-item">
-				<a href="/jobs">
-					<div class="icon-small">
-						<img src="img/icons/jobs.svg">
-						<div class="notification hidden"><span></span></div>
+					<div class="navbar-item">
+						<a href="/events">
+							<div class="icon-small">
+								<img src="img/icons/events.svg">
+								<div class="notification"><span>2</span></div>
+							</div>
+							<p class="text-navbar">Events</p>
+						</a>
 					</div>
-					<p class="text-navbar">Jobs</p>
-				</a>
-			</div>
-			<div class="navbar-item">
-				<a href="/companies">
-					<div class="icon-small">
-						<img src="img/icons/companies.svg">
-						<div class="notification hidden"><span></span></div>
+					<div class="navbar-item">
+						<a href="/jobs">
+							<div class="icon-small">
+								<img src="img/icons/jobs.svg">
+								<div class="notification hidden"><span></span></div>
+							</div>
+							<p class="text-navbar">Jobs</p>
+						</a>
 					</div>
-					<p class="text-navbar">Companies</p>
-				</a>
-			</div>
-			<div class="navbar-item">
-				<a href="/messages">
-					<div class="icon-small">
-						<img src="img/icons/messages.svg">
-						<div class="notification hidden"><span></span></div>
+					<div class="navbar-item">
+						<a href="/companies">
+							<div class="icon-small">
+								<img src="img/icons/companies.svg">
+								<div class="notification hidden"><span></span></div>
+							</div>
+							<p class="text-navbar">Companies</p>
+						</a>
 					</div>
-					<p class="text-navbar">Messages</p>
-				</a>
-			</div>
-			<div class="overlay-wrapper navbar-avatar-wrapper js-avatar-target hover-wrapper is-hoverable-logo bottom">
-				<img class="avatar js-avatar" src="img/profile-icon.jpg">
-				<div class="overlay-wrapper animate-bottom js-avatar-target">
-					<div class="overlay"></div>
-					<img class="icon-small icon-overlay" src="img/icons/profile.svg">
-					<p class="text-navbar text-overlay">Profile</p>
-				</div>
-			</div>
-    </div>
-  </div>
+					<div class="navbar-item">
+						<a href="/messages">
+							<div class="icon-small">
+								<img src="img/icons/messages.svg">
+								<div class="notification hidden"><span></span></div>
+							</div>
+							<p class="text-navbar">Messages</p>
+						</a>
+					</div>
+					<div class="overlay-wrapper navbar-avatar-wrapper js-avatar-target hover-wrapper is-hoverable-logo bottom">
+						<img class="avatar js-avatar" src="img/profile-icon.jpg">
+						<div class="overlay-wrapper animate-bottom js-avatar-target">
+							<div class="overlay"></div>
+							<img class="icon-small icon-overlay" src="img/icons/profile.svg">
+							<p class="text-navbar text-overlay">Profile</p>
+						</div>
+					</div>
+		    	</div>
+  			</div>
 		</nav>
 		<div class="main">
 			<div class="content">

@@ -78,7 +78,19 @@
 	width: 1.875rem;
 	float: left;
 }
-
+.connection-avatar-wrapper{
+	.widget-avatar{
+		float: initial;
+		margin: 0 auto;
+		display: block;
+	}
+}
+.text-user-title{
+	img{
+		width: .75rem;
+		vertical-align: middle;
+	}
+}
 
 
 

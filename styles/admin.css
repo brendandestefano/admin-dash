@@ -165,6 +165,28 @@ img {
     margin-left: 0;
     margin-right: 0; }
 
+.connection-avatar-wrapper {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40.67797%;
+  float: left; }
+  .connection-avatar-wrapper:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
+.connection-icon {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15.25424%;
+  float: left; }
+  .connection-icon:after {
+    content: " ";
+    display: block;
+    clear: both; }
+
 .navbar {
   background-color: #00A9E0;
   background-color: linear-gradient(to bottom, #0096c7, #61d8ff);
@@ -263,6 +285,15 @@ img {
   -webkit-border-radius: 50%;
   width: 1.875rem;
   float: left; }
+
+.connection-avatar-wrapper .widget-avatar {
+  float: initial;
+  margin: 0 auto;
+  display: block; }
+
+.text-user-title img {
+  width: .75rem;
+  vertical-align: middle; }
 
 .vertical-navbar__icon {
   display: block;
@@ -378,12 +409,23 @@ img {
   font-size: .75rem;
   text-transform: uppercase; }
 
-.text-user-name {
+.text-user-name, .connection-avatar-wrapper .text-user-name, .connection-avatar-wrapper .text-user-type {
   font-size: 0.813rem;
   margin-bottom: 0;
   margin-top: 0.8125rem;
   color: #00A9E0;
   font-weight: 300; }
+  .text-user-name span, .connection-avatar-wrapper .text-user-name span, .connection-avatar-wrapper .text-user-type span {
+    float: right;
+    color: #666;
+    font-size: .5rem; }
+
+.connection-avatar-wrapper .text-user-name, .connection-avatar-wrapper .text-user-type {
+  font-size: 0.625rem;
+  margin-top: 0.125rem;
+  text-align: center; }
+.connection-avatar-wrapper .text-user-type {
+  color: #555; }
 
 .text-user-city,
 .text-user-title {
@@ -394,6 +436,16 @@ img {
 
 .text-user-city {
   margin-bottom: 0; }
+
+.text-shared-interests {
+  color: #555;
+  font-weight: 300;
+  text-align: center;
+  font-size: 0.625rem;
+  margin-top: 0.4375rem;
+  margin-bottom: 1.25rem; }
+  .text-shared-interests span {
+    font-weight: 500; }
 
 .is-hoverable-logo:hover .overlay-wrapper {
   display: block; }

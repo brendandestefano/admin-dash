@@ -41,3 +41,11 @@
 		@include span(12 of 12);
 	}
 }
+.connection-avatar-wrapper{
+	@include container;
+	@include span(5 no-gutters);
+}
+.connection-icon{
+	@include container;
+	@include span(2 no-gutters);
+}

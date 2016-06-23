@@ -6,6 +6,10 @@
 	height: 100%;
 }
 .graphs-wrapper{
+	@media all and (max-width: 767px){
+		z-index: 3;
+		position: relative;
+	}
 	hr{
 		border: 1px solid #CCC;
 		width: 60%;
@@ -38,6 +42,10 @@
 		max-width: 8.125rem;
 		outline: none;
 		vertical-align: top;
+		@media all and (max-width: 980px){
+			margin-top: .25rem;
+			font-size: 0.65rem;
+		}
 	}
 }
 .widgets-wrapper{
@@ -57,4 +65,24 @@
 	.user-details-wrapper{
 		margin-left: 2.5rem;
 	}
+}
+.hover-wrapper{
+	@media all and (max-width: 767px){
+		height: 3.625rem !important;
+		margin-bottom: .5rem;
+		margin-top: -.5rem;
+		img{
+			margin-top: 1rem;
+		}
+	}
+	&.navbar-avatar-wrapper{
+		@media all and (max-width: 767px){
+			.text-navbar{
+				top: 1.75rem;
+			}
+		}
+	}
+}
+.z-index-helper{
+	z-index: 4;
 }

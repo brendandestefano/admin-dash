@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="admin.js"></script>
 	<link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 	<script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style type="text/css">
 		/*
 			URL based off web app banner. Changes per school
@@ -20,7 +21,29 @@
 <body>
 	<div class="container">
 		<nav class="navbar">
-			<div class="js-school-logo-target is-hoverable-logo top">
+			<div class="menu-toggle">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input type="checkbox" onclick="fireZIndexHelper();"/>
+    
+    <!--
+    Some spans to act as a hamburger.
+    
+    They are acting like a real hamburger,
+    not that McDonalds stuff.
+    -->
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+    <span class="burger-line"></span>
+    
+    <!--
+    Too bad the menu has to be inside of the button
+    but hey, it's pure CSS magic.
+    -->
+    <div class="menu">
+			<div class="js-school-logo-target hover-wrapper is-hoverable-logo top">
 				<!-- src based off school logo -->
 				<img class="js-school-logo" src="https://upload.wikimedia.org/wikipedia/en/a/ad/Colby_college_bicentennial_seal.png">
 				<!-- -->
@@ -84,7 +107,7 @@
 					<p class="text-navbar">Messages</p>
 				</a>
 			</div>
-			<div class="overlay-wrapper navbar-avatar-wrapper js-avatar-target is-hoverable-logo bottom">
+			<div class="overlay-wrapper navbar-avatar-wrapper js-avatar-target hover-wrapper is-hoverable-logo bottom">
 				<img class="avatar js-avatar" src="img/profile-icon.jpg">
 				<div class="overlay-wrapper animate-bottom js-avatar-target">
 					<div class="overlay"></div>
@@ -92,6 +115,8 @@
 					<p class="text-navbar text-overlay">Profile</p>
 				</div>
 			</div>
+    </div>
+  </div>
 		</nav>
 		<div class="main">
 			<div class="content">

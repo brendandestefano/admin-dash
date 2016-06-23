@@ -4,9 +4,20 @@
 	right: 0;
 	&.animate-top{
 		@include transition(top, 0.6s, ease-in-out);
+		@media all and (max-width: 767px){
+			height: 3.625rem !important;
+			padding-bottom: .5rem;
+			border-bottom: 1px solid #999;
+			margin-top: .5rem;
+			top: initial !important;
+		}
 	}
 	&.animate-bottom{
 		@include transition(bottom, 0.6s, ease-in-out);
+		@media all and (max-width: 767px){
+			bottom: 0 !important;
+			top: 0;
+		}	
 	}
 }
 .overlay{
@@ -64,14 +75,20 @@
 		position: absolute;
 		bottom: 0;
 		border-bottom: 5px solid $brand-secondary-color;
+		@media all and (max-width: 767px){
+			border: 0;
+		}
 	}
 }
 .banner{
 	position: relative;
+	@media all and (max-width: 767px){
+		height: 4rem !important;
+	}
 }
 .change-triangle{
 	width: 0.5rem;
-	margin-bottom: 0.0625rem;
+	margin-bottom: 0.15rem;
 }
 .widget-avatar{
 	@include border-radius(50%);
@@ -91,39 +108,11 @@
 		vertical-align: middle;
 	}
 }
-
-
-
-
-.vertical-navbar__icon{
-	display: block;
-    margin: 0 auto .5em;
-	padding-top: .5em;
-	width: 1.5em;
-}
-.vertical-navbar__profile-img{
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	border-bottom: 5px solid $brand-secondary-color;
-}
-.dashboard-banner-overlay{
-	opacity: .5;
-}
-
-.background-banner{
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-.dashboard-background-banner{
-	position: relative;
-}
-.dashboard-chart{
-	@include container;
-	@include span(3 of 5 at 2 isolate);
-	margin-bottom: 1em;
-}
-.change-triangle{
-	width: 0.542em;
-	margin-bottom: 0.063em;
+.menu{
+	@media all and (max-width: 767px){
+		img{
+			width: 2rem;
+			max-width: initial;
+		}
+	}
 }

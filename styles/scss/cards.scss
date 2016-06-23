@@ -1,8 +1,14 @@
 .cards-wrapper{
 	padding: 0.625rem;
+	@media all and (max-width: 767px){
+		z-index: 3;
+		position: relative;
+	}
 }
 .card-row{
-	border-bottom: 1px solid $border-grey;
+	@media all and (min-width: 768px){
+		border-bottom: 1px solid $border-grey;
+	}
 	padding-bottom: 0.625em;
 	padding-top: 0.625em;
 	&:first-of-type{
@@ -13,16 +19,24 @@
 	}
 	.card{
 		border-right: 1px solid $border-grey;
-		&:last-of-type{
-			border: 0;
+		@media all and (min-width: 768px){
+			&:last-of-type{
+				border: 0;
+			}
+			&:hover{
+				box-shadow: 1px 1px 8px $text-dark-grey;
+			}
 		}
-		&:hover{
-			box-shadow: 1px 1px 8px $text-dark-grey;
+		@media all and (max-width: 767px){
+			border: 0;
 		}
 		.icon-medium{
 			position: absolute;
 			margin-left: -3rem;
 			top: -0.35rem;
+			@media all and (max-width: 980px){
+				display: none;
+			}
 		}
 		.chart-wrapper{
 			max-width: 15.63rem;

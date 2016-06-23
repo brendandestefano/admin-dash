@@ -44,7 +44,7 @@ var initiateBarChart = function(){
 	};
 
 	var options = {
-		seriesBarDistance: 20,
+		seriesBarDistance: $(window).width() > 767 ? 20 : 8,
 		axisX: {
 			offset: 20,
 			showGrid: false,

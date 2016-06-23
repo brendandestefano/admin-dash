@@ -7,10 +7,132 @@
 		width: 100%;
 		&.active,
 		&:hover{
-			background: lighten($brand-color, 20%);
+			@media all and (min-width: 768px){
+				background: lighten($brand-color, 20%);
+				.text-navbar{
+					visibility: visible;
+				}
+			}
+		}	
+		@media all and (max-width: 767px){
+			height: 3.625rem;
+			border-bottom: 1px solid #999;
+			&.active{
+				background: $text-dark-grey;
+				.text-navbar{
+					color: #FFF;
+				}
+			}
+			.icon-small{
+				float: left;
+				padding-top: .75rem;
+				width: inherit;
+			}
 			.text-navbar{
+				font-size: 1.5rem;
+				top: .85rem;
+				text-align: left;
+				margin-left: 3.5rem;
+				padding-top: 1rem;
 				visibility: visible;
 			}
 		}
 	}
+	@media all and (max-width: 767px){
+		z-index: 2;
+		background-color: transparent;
+		background-image: initial;
+		overflow: scroll;
+	}
+}
+.menu-toggle
+{
+	@media all and (min-width: 768px){
+		input{
+			display: none;
+		}
+	}
+	@media all and (max-width: 767px){
+		display: block;
+		position: relative;
+		top: 1.25rem;
+		left: 1.25rem;
+		z-index: 1;
+		-webkit-user-select: none;
+		user-select: none;
+		input{
+			display: block;
+			width: 2.5rem;
+			height: 2rem;
+			position: absolute;
+			top: -0.4375rem;
+			left: -0.3125rem;
+			cursor: pointer;
+			opacity: 0; 
+			z-index: 2; 
+			-webkit-touch-callout: none;
+			&:checked ~ .burger-line{
+				opacity: 1;
+				transform: rotate(45deg) translate(-2px, -1px);
+			}
+			&:checked ~ .burger-line:nth-last-child(3){
+				opacity: 0;
+				transform: rotate(0deg) scale(0.2, 0.2);
+			}
+			&:checked ~ .burger-line:nth-last-child(2){
+				opacity: 1;
+				transform: rotate(-45deg) translate(0, -1px);
+			}
+			&:checked ~ .menu{
+				transform: scale(1.0, 1.0);
+				opacity: 1;
+			}
+		}
+		.burger-line{
+			display: block;
+			width: 2rem;
+			height: .25rem;
+			margin-bottom: 0.3125rem;
+			position: relative;
+			background: #FFF;
+			@include border-radius(0.3125rem);
+			z-index: 1;
+			transform-origin: .25rem ;
+			transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+			background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+			opacity 0.55s ease;
+			&:first-child{
+				transform-origin: 0% 0%;
+			}
+			&:nth-last-child(2){
+				transform-origin: 0% 100%;
+			}
+		}
+	}
+}
+.menu
+{
+	@media all and (max-width: 767px){
+		display: block;
+		position: absolute;
+		margin: -6.25rem 0 0 -1.25rem;
+		-webkit-font-smoothing: antialiased;
+		transform-origin: 0% 0%;
+		transform: translate(-100%, 0);
+		transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+		width: 100%;
+		padding: 7rem 0 3.125rem;
+		background: #777;
+		img{
+			float: left;
+			margin-left: 0.625rem;
+		}
+		.overlay,
+		.icon-overlay{
+			display: none !important;
+		}
+		.text-navbar{
+			color: #FFF;
+		}
+	}	
 }

@@ -9,12 +9,22 @@
 	visibility: hidden;
 	text-align: center;
 	padding: 0 0 .5rem;
+	@media all and (max-width: 980px){
+		font-size: .65rem;
+	}
 }
 .text-overlay{
 	z-index: 1;
 	visibility: visible;
 	position: absolute;
 	top: 4.125em;
+	@media all and (max-width: 767px){
+		font-size: 1.5rem;
+		top: .85rem;
+		color: #555;
+		text-align: left;
+		left: 3.5rem;
+	}
 }
 .header{
 	color: #FFF;
@@ -23,6 +33,13 @@
 	font-weight: 300;
 	z-index: 2;
 	position: relative;
+	@media all and (max-width: 980px){
+		font-size: 9vw;
+	}
+	@media all and (max-width: 767px){
+		padding-left: 4.375rem !important;
+		z-index: 1;
+	}
 }
 .text-category{
 	margin-bottom: 0;

@@ -1,18 +1,30 @@
 .navbar{
 	@include container;
 	@include span(1 of 12 first no-gutters wide);
+	@media all and (max-width: 767px){
+		@include span(11 of 12);
+	}
 }
 .main{
 	@include container;
 	@include span(11 of 12 last no-gutters);
+	@media all and (max-width: 767px){
+		@include span(12 of 12 no-gutters);
+	}
 }
 .content{
 	@include container;
 	@include span(9 of 12 first no-gutters wide);
+	@media all and (max-width: 767px){
+		@include span(12 of 12 no-gutters);
+	}	
 }
 .engagement{
 	@include container;
 	@include span(3 of 12 last no-gutters);
+	@media all and (max-width: 767px){
+		display: none;
+	}
 }
 .cards-wrapper,
 .card-row,
@@ -24,20 +36,30 @@
 	.card{
 		@include container;
 		@include span(4 of 12 no-gutters wide);
-		&:first-of-type{
-			@include span(4 of 12 no-gutters);
+		@media all and (min-width: 768px){
+			&:first-of-type{
+				@include span(4 of 12 no-gutters);
+			}
+		}
+		@media all and (max-width: 767px){
+			@include span(12 of 12 no-gutters);
 		}
 	}
 }
 .graph{
 	@include container;
-	&:nth-of-type(1){
-		@include span(6 of 12 first);
+	@media all and (min-width: 768px){
+		&:nth-of-type(1){
+			@include span(6 of 12 first);
+		}
+		&:nth-of-type(2){
+			@include span(6 of 12 last);
+		}
+		&:nth-of-type(3){
+			@include span(12 of 12);
+		}
 	}
-	&:nth-of-type(2){
-		@include span(6 of 12 last);
-	}
-	&:nth-of-type(3){
+	@media all and (max-width: 767px){
 		@include span(12 of 12);
 	}
 }

@@ -1,15 +1,17 @@
 .is-hoverable-logo:hover{
-	.overlay-wrapper{
-		display: block;
-	}
-	&.top{
+	@media all and (min-width: 768px){
 		.overlay-wrapper{
-			top: 0 !important;
+			display: block;
 		}
-	}
-	&.bottom{
-		.overlay-wrapper{
-			bottom: 0 !important;
+		&.top{
+			.overlay-wrapper{
+				top: 0 !important;
+			}
+		}
+		&.bottom{
+			.overlay-wrapper{
+				bottom: 0 !important;
+			}
 		}
 	}
 }

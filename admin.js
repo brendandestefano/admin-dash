@@ -1,6 +1,6 @@
 var checkOverlaySize = function($overlay, $image, border, direction){
 	var border = border || false;
-	if(!$image.length)
+	if(!$image.length || $(window).width() < 767)
 		return;
 
 	$overlay.css('height', $image.height() + (border ? parseFloat(border.replace('px', '')) : 0)+'px');
@@ -19,16 +19,14 @@ var setBannerCssProperties = function(){
 	});
 };
 
-var onDocumentReady = function(){
-	//var overlayBottom = $('.vertical-navbar__overlay-wrapper--profile');
-	//var avatar = $('.vertical-navbar__profile-img');
+var fireZIndexHelper = function(){
+	$('.navbar').toggleClass('z-index-helper');
+};
 
-	//checkOverlaySize(overlayBottom, avatar, avatar.css('border-bottom-width'), 'bottom');
+var onDocumentReady = function(){
 	checkOverlaySize($('.js-school-logo-target'), $('.js-school-logo'), false, 'top');
 	checkOverlaySize($('.js-avatar-target'), $('.js-avatar'), $('.js-avatar').css('border-bottom-width'), 'bottom');
 	checkOverlaySize($('.banner'), $('.js-school-logo'), false, false);
-	//checkOverlaySize($('.vertical-navbar__school-logo-wrapper'), $('.school-logo'), false, 'top');
-	//checkOverlaySize($('.dashboard-background-banner'), $('.school-logo'), false, false);
 	setBannerCssProperties();
 
 	initiateStatCharts();

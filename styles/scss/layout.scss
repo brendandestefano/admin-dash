@@ -71,3 +71,23 @@
 	@include container;
 	@include span(2 no-gutters);
 }
+.table-wrapper{
+	@include container;
+	@include span(12 of 12);
+}
+.pagination{
+	@include container;
+	@include span(12 of 12);
+	.previous{
+		@include container;
+		@include span(2 of 12 no-gutters);
+	}
+	.next{
+		@include container;
+		@include span(2 of 12 no-gutters);
+	}
+	.pages{
+		@include container;
+		@include span(8 of 12 no-gutters wider);	
+	}
+}

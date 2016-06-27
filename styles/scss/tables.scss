@@ -1,0 +1,87 @@
+.table-wrapper{
+	padding: 1rem;
+}
+.table{
+	margin: 1.25rem;
+	width: calc(100% - 2.5rem);
+	background: #EEE;
+	text-align: left;
+	border-collapse: separate;
+	color: #555;
+	th,
+	td{
+		font-weight: 300;
+		padding: 1rem;
+		border-left: 1px solid #555;
+		border-top: 1px solid #555;
+		&:last-of-type{
+			border-right: 1px solid #555;
+		}
+	}
+	thead{
+		th{
+			@media all and (min-width: 1220px){
+				font-size: 1.15rem;
+			}
+			@media all and (min-width: 1050px) and (max-width: 1219px){
+				font-size: .75rem;
+			}
+			@media all and (min-width: 768px) and (max-width: 1049px){
+				font-size: .75rem;
+				padding: 1rem .5rem;
+				text-align: center;
+			}
+			&:first-of-type{
+				@include border-radius(.25rem 0 0 0);
+			}
+			&:last-of-type{
+				@include border-radius(0 .25rem 0 0);
+			}
+		}
+	}
+	tbody{
+		tr{
+			background: #FFF;
+			td{
+				font-size: 1rem;
+				@media all and (min-width: 1050px) and (max-width: 1219px){
+					font-size: .75rem;
+				}
+				@media all and (min-width: 768px) and (max-width: 1049px){
+					font-size: .75rem;
+				}
+				&:hover{
+					color: #EEE;
+					background: #777;
+				}
+				&:nth-last-of-type(-n+2){
+					padding: 1rem;
+					border-top: 1px solid $text-light-grey;
+					border-left: 1px solid $text-light-grey;
+				}
+				&:last-of-type{
+					border-right: 1px solid #555;
+					&:hover{
+						background: inherit;
+					}
+				}
+				&:nth-last-of-type(2){
+					&:hover{
+						background: inherit;
+					}
+				}
+			}
+			&:last-of-type{
+				td{
+					border-bottom: 1px solid #555;
+					&:first-of-type{
+						@include border-radius(0 0 0 .25rem);
+					}
+					&:last-of-type{
+						@include border-radius(0 0 .25rem 0);
+					}
+				}
+			}
+		}
+	}
+}

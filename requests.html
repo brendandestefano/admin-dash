@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="styles/admin.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript" src="charts.js"></script>
+	<script type="text/javascript" src="admin.js"></script>
+	<link rel="stylesheet" href="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+	<script src="http://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style type="text/css">
+		/*
+			URL based off web app banner. Changes per school
+		*/
+		.banner{
+			background: url("https://www.filepicker.io/api/file/xwfciiM0Sw2iqkc2SDCY") no-repeat center/cover;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar">
+			<div class="menu-toggle">
+				<input type="checkbox" onclick="fireZIndexHelper();"/>
+				<span class="burger-line"></span>
+				<span class="burger-line"></span>
+				<span class="burger-line"></span>
+		    	<div class="menu">
+					<div class="js-school-logo-target hover-wrapper is-hoverable-logo top">
+						<!-- src based off school logo -->
+						<img class="js-school-logo" src="https://upload.wikimedia.org/wikipedia/en/a/ad/Colby_college_bicentennial_seal.png">
+						<!-- -->
+						<div class="overlay-wrapper animate-top js-school-logo-target">
+							<div class="overlay"></div>
+							<img class="icon-small icon-overlay" src="img/icons/profile.svg">
+							<p class="text-navbar text-overlay">School</p>
+						</div>
+					</div>
+					<div class="navbar-item">
+						<a href="/">
+							<div class="icon-small">
+								<img src="img/icons/dashboard.svg">
+								<div class="notification hidden"><span></span></div>
+							</div>
+							<p class="text-navbar">Dashboard</p>
+						</a>
+					</div>
+					<div class="navbar-item">
+						<a href="/reports">
+							<div class="icon-small">
+								<img src="img/icons/reports.svg">
+								<div class="notification hidden"><span></span></div>
+							</div>
+							<p class="text-navbar">Reports</p>
+						</a>
+					</div>
+					<div class="navbar-item">
+						<a href="/events">
+							<div class="icon-small">
+								<img src="img/icons/events.svg">
+								<div class="notification"><span>2</span></div>
+							</div>
+							<p class="text-navbar">Events</p>
+						</a>
+					</div>
+					<div class="navbar-item">
+						<a href="/jobs">
+							<div class="icon-small">
+								<img src="img/icons/jobs.svg">
+								<div class="notification hidden"><span></span></div>
+							</div>
+							<p class="text-navbar">Jobs</p>
+						</a>
+					</div>
+					<div class="navbar-item">
+						<a href="/companies">
+							<div class="icon-small">
+								<img src="img/icons/companies.svg">
+								<div class="notification hidden"><span></span></div>
+							</div>
+							<p class="text-navbar">Companies</p>
+						</a>
+					</div>
+					<div class="navbar-item active">
+						<a href="../requests.html">
+							<div class="icon-small">
+								<img src="img/icons/messages.svg">
+								<div class="notification hidden"><span></span></div>
+							</div>
+							<p class="text-navbar">Requests</p>
+						</a>
+					</div>
+					<div class="overlay-wrapper navbar-avatar-wrapper js-avatar-target hover-wrapper is-hoverable-logo bottom">
+						<img class="avatar js-avatar" src="img/profile-icon.jpg">
+						<div class="overlay-wrapper animate-bottom js-avatar-target">
+							<div class="overlay"></div>
+							<img class="icon-small icon-overlay" src="img/icons/profile.svg">
+							<p class="text-navbar text-overlay">Profile</p>
+						</div>
+					</div>
+		    	</div>
+  			</div>
+		</nav>
+		<div class="main">
+			<div class="banner">
+				<h2 class="header">Colby College</h2>
+				<div class="overlay"></div>
+			</div>
+			<h3 class="sub-header">Requests</h3>
+			<div class="table-wrapper">
+				<div class="tabs">
+					<input type="radio" name="tabs" id="tab1" checked >
+					<label for="tab1">
+						<span>Alumni</span>
+					</label>
+					<input type="radio" name="tabs" id="tab2">
+					<label for="tab2">
+						<span>Faculty/Staff</span>
+					</label>
+					<input type="radio" name="tabs" id="tab3">
+					<label for="tab3">
+						<span>Students</span>
+					</label>
+					<input type="radio" name="tabs" id="tab4">
+					<label for="tab4">
+						<span>Companies</span>
+					</label>
+					<input type="radio" name="tabs" id="tab5">
+					<label for="tab5">
+						<span>Friends</span>
+					</label>
+					<input type="radio" name="tabs" id="tab6">
+					<label for="tab6">
+						<span>Jobs</span>
+					</label>
+					<input type="radio" name="tabs" id="tab7">
+					<label for="tab7">
+						<span>Groups</span>
+					</label>
+					<input type="radio" name="tabs" id="tab8">
+					<label for="tab8">
+						<span>Events</span>
+					</label>
+					<input type="radio" name="tabs" id="tab9">
+					<label for="tab9">
+						<span>Approved</span>
+					</label>
+					<input type="radio" name="tabs" id="tab10">
+					<label for="tab10">
+						<span>Declined</span>
+					</label>
+					<div id="tab-content1" class="tab-content">
+						<table class="table">
+							<thead>
+								<tr>
+									<th>First Name
+										<div class="sort-wrapper asc">
+											<img src="img/triangle-positive-grey.svg">
+											<img src="img/triangle-negative-grey.svg">
+										</div>
+									</th>
+									<th>Last Name
+										<div class="sort-wrapper">
+											<img src="img/triangle-positive-grey.svg">
+											<img src="img/triangle-negative-grey.svg">
+										</div>
+									</th>
+									<th>E-Mail
+										<div class="sort-wrapper">
+											<img src="img/triangle-positive-grey.svg">
+											<img src="img/triangle-negative-grey.svg">
+										</div>
+									</th>
+									<th>Graduation Year
+										<div class="sort-wrapper">
+											<img src="img/triangle-positive-grey.svg">
+											<img src="img/triangle-negative-grey.svg">
+										</div>
+									</th>
+									<th>Approve</th>
+									<th>Decline</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td data-label="First Name">AJ</td>
+									<td data-label="Last Name">Wilhelm</td>
+									<td data-label="E-Mail">aj@thecampustap.com</td>
+									<td data-label="Graduation Year">2004</td>
+									<td data-label="Approve"><button class="btn-table approve">Approve</button></td>
+									<td data-label="Decline"><button class="btn-table decline">Decline</button></td>
+								</tr>
+								<tr>
+									<td data-label="First Name">Brendan</td>
+									<td data-label="Last Name">DeStefano</td>
+									<td data-label="E-Mail">brendan@thecampustap.com</td>
+									<td data-label="Graduation Year">2016</td>
+									<td data-label="Approve"><button class="btn-table approve">Approve</button></td>
+									<td data-label="Decline"><button class="btn-table decline">Decline</button></td>
+								</tr>
+								<tr>
+									<td data-label="First Name">Courtney</td>
+									<td data-label="Last Name">Eastes</td>
+									<td data-label="E-Mail">courtney@thecampustap.com</td>
+									<td data-label="Graduation Year">2012</td>
+									<td data-label="Approve"><button class="btn-table approve">Approve</button></td>
+									<td data-label="Decline"><button class="btn-table decline">Decline</button></td>
+								</tr>
+								<tr>
+									<td data-label="First Name">Chris</td>
+									<td data-label="Last Name">Bent</td>
+									<td data-label="E-Mail">chris@thecampustap.com</td>
+									<td data-label="Graduation Year">2013</td>
+									<td data-label="Approve"><button class="btn-table approve">Approve</button></td>
+									<td data-label="Decline"><button class="btn-table decline">Decline</button></td>
+								</tr>
+								<tr>
+									<td data-label="First Name">Dan</td>
+									<td data-label="Last Name">Shields</td>
+									<td data-label="E-Mail">dan@thecampustap.com</td>
+									<td data-label="Graduation Year">2014</td>
+									<td data-label="Approve"><button class="btn-table approve">Approve</button></td>
+									<td data-label="Decline"><button class="btn-table decline">Decline</button></td>
+								</tr>
+								<tr>
+									<td data-label="First Name">Ethan</td>
+									<td data-label="Last Name">Bukowiec</td>
+									<td data-label="E-Mail">ethan@thecampustap.com</td>
+									<td data-label="Graduation Year">2013</td>
+									<td data-label="Approve"><button class="btn-table approve">Approve</button></td>
+									<td data-label="Decline"><button class="btn-table decline">Decline</button></td>
+								</tr>
+								<tr>
+									<td data-label="First Name">Kyle</td>
+									<td data-label="Last Name">Clark</td>
+									<td data-label="E-Mail">kyle@thecampustap.com</td>
+									<td data-label="Graduation Year">2012</td>
+									<td data-label="Approve"><button class="btn-table approve">Approve</button></td>
+									<td data-label="Decline"><button class="btn-table decline">Decline</button></td>
+								</tr>
+								<tr>
+									<td data-label="First Name">Nicole</td>
+									<td data-label="Last Name">DeSantis</td>
+									<td data-label="E-Mail">nicole@thecampustap.com</td>
+									<td data-label="Graduation Year">2013</td>
+									<td data-label="Approve"><button class="btn-table approve">Approve</button></td>
+									<td data-label="Decline"><button class="btn-table decline">Decline</button></td>
+								</tr>
+								<tr>
+									<td data-label="First Name">Remy</td>
+									<td data-label="Last Name">Carpinito</td>
+									<td data-label="E-Mail">remy@thecampustap.com</td>
+									<td data-label="Graduation Year">2014</td>
+									<td data-label="Approve"><button class="btn-table approve">Approve</button></td>
+									<td data-label="Decline"><button class="btn-table decline">Decline</button></td>
+								</tr>
+								<tr>
+									<td data-label="First Name">Sean</td>
+									<td data-label="Last Name">Connor</td>
+									<td data-label="E-Mail">sean@thecampustap.com</td>
+									<td data-label="Graduation Year">2014</td>
+									<td data-label="Approve"><button class="btn-table approve">Approve</button></td>
+									<td data-label="Decline"><button class="btn-table decline">Decline</button></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="pagination">
+							<p class="previous disabled"><< Previous</p>
+							<p class="pages">
+								<a href="" class="active">1</a>
+								<a href="">2</a>
+								<a href="">3</a>
+								<a href="">4</a>
+								<a href="">5</a>
+							</p>
+							<p class="next">Next >></p>
+						</div>
+					</div>
+					<div id="tab-content2" class="tab-content">
+						2
+					</div>
+					<div id="tab-content3" class="tab-content">
+						3
+					</div>
+					<div id="tab-content4" class="tab-content">
+						4
+					</div>
+					<div id="tab-content5" class="tab-content">
+						5
+					</div>
+					<div id="tab-content6" class="tab-content">
+						6
+					</div>
+					<div id="tab-content7" class="tab-content">
+						7
+					</div>
+					<div id="tab-content8" class="tab-content">
+						8
+					</div>
+					<div id="tab-content9" class="tab-content">
+						9
+					</div>
+					<div id="tab-content10" class="tab-content">
+						10
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

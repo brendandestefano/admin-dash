@@ -24,7 +24,7 @@
 				border: 0;
 			}
 			&:hover{
-				box-shadow: 1px 1px 8px $text-dark-grey;
+				@include box-shadow(1px 1px 8px $text-dark-grey);
 			}
 		}
 		@media all and (max-width: 767px){

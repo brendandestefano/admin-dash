@@ -86,3 +86,51 @@
 .z-index-helper{
 	z-index: 4;
 }
+.sort-wrapper{
+	float: right;
+	width: .75rem;
+	position: relative;
+	height: 1.125rem;
+	img{
+		position: absolute;
+		width: .75rem;
+		&:first-of-type{
+			top: 0;
+		}
+		&:last-of-type{
+			bottom: 0;
+		}
+	}
+	&.asc{
+		img{
+			top: 50%;
+			margin-top: -0.25rem;
+			&:last-of-type{
+				display: none;
+			}
+		}
+	}
+	&.desc{
+		img{
+			bottom: 50%;
+			margin-bottom: -0.25rem;
+			&:first-of-type{
+				display: none;
+			}
+		}
+	}
+	@media (max-width: 1219px) and (min-width: 1050px){
+		width: .5rem;
+		height: 0.75rem;
+	}
+	@media all and (min-width: 768px) and (max-width: 1049px){
+		display: none;
+		&.asc,
+		&.desc{
+			display: block;
+			width: .5rem;
+			height: 0.75rem;
+			margin-top: -.75rem;
+		}
+	}
+}

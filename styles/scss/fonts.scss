@@ -34,12 +34,19 @@
 	z-index: 2;
 	position: relative;
 	@media all and (max-width: 980px){
-		font-size: 9vw;
+		font-size: 5vw;
 	}
 	@media all and (max-width: 767px){
 		padding-left: 4.375rem !important;
 		z-index: 1;
+		font-size: 7vw;
 	}
+}
+.sub-header{
+	color: $text-dark-grey;
+	font-size: 2rem;
+	margin: 2rem 1rem 1rem;
+	font-weight: 300;
 }
 .text-category{
 	margin-bottom: 0;

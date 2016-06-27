@@ -29,10 +29,12 @@ var onDocumentReady = function(){
 	checkOverlaySize($('.banner'), $('.js-school-logo'), false, false);
 	setBannerCssProperties();
 
-	initiateStatCharts();
-	initiateBarChart();
-	initiateLineChart();
-	initiatePieChart();
+	if($('.ct-chart').length > 0){
+		initiateStatCharts();
+		initiateBarChart();
+		initiateLineChart();
+		initiatePieChart();
+	}
 
 	$(window).on('resize', function(){
 		checkOverlaySize($('.js-school-logo-target'), $('.js-school-logo'), false, 'top');

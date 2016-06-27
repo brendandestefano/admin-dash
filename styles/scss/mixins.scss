@@ -38,3 +38,9 @@
 	transition: $location $length $type;
     -webkit-transition: $location $length $type;
 }
+
+@mixin box-shadow($box-shadow){
+	-webkit-box-shadow: $box-shadow;
+	-moz-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
+}

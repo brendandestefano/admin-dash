@@ -1,0 +1,117 @@
+.ticket{
+	float: left;
+    width: 100%;
+	.input-field{
+		float: left;
+		margin-left: 1%;
+		min-height: 4rem;
+		position: relative;
+		&:nth-of-type(1){
+			margin-left: 0;
+			width: 50% !important;
+		}
+		&:nth-of-type(2),
+		&:nth-of-type(3){
+			width: 22% !important;
+		}
+		&:nth-of-type(4){
+			width: 2% !important;
+			float: right;
+		}
+		button{
+			position: absolute !important;
+			bottom: -0.5rem;
+			right: 0;
+			min-width: initial !important;
+		}
+	}
+}
+.ticket,
+.reminder{
+	&:last-of-type{
+		.break{
+			display: none;
+		}
+	}
+}
+.break{
+	border: 1px solid #EA7600;
+	width: 50%;
+	margin-top: 3rem;
+}
+.reminder{
+	float: left;
+    width: 100%;
+	.input-field{
+		margin-left: 1%;
+		min-height: 4rem;
+		position: relative;
+		width: 31% !important;
+		float: left;
+		&:nth-of-type(1){
+			margin-left: 0;
+		}
+		&:nth-of-type(1),
+		&:nth-of-type(2){
+			*{
+				width: 100% !important;
+			}
+		}
+		&:nth-of-type(3){
+			margin-top: -1.5rem;
+		}
+		&:nth-of-type(4){
+			width: 4% !important;
+			float: right;
+			margin-top: 0.6875rem;
+			margin-bottom: -0.6875rem;
+			button{
+				float: right;
+				width: 1.5rem;
+				float: right;
+				div,svg{
+					width: 1.5rem;
+					float: right;
+				}
+			}
+		}
+	}
+	.break{
+		margin-bottom: 3rem;
+	}
+}
+.tag-chip{
+	svg{
+		fill: #FFF !important;
+	}
+}
+.filter-container{
+	border-bottom: 1px solid #E0E0E0;
+	padding-bottom: 1rem;
+	overflow-y: scroll;
+	&:last-of-type{
+		border-bottom: 0;
+	}
+	.filter{
+		input{
+			height: 1.5rem !important;
+		}
+		&:nth-of-type(n+6){
+			display: none !important;
+		}
+	}
+}
+.selected{
+	opacity: .25;
+	background: none !important;
+}
+.invitation-column{
+	max-height: 39.63rem;
+	overflow-y: scroll;
+}
+.invitation-selected-column{
+	height: 42.63rem;
+	max-height: 42.63rem;
+	background: #EEE;
+	overflow-y: scroll;
+}

@@ -1,0 +1,15 @@
+.text-center{
+	text-align: center;
+}
+.rounded-button{
+	@include border-radius(24px !important);
+	*{
+		@include border-radius(24px !important);
+	}
+}
+.pull-left{
+	float: left !important;
+}
+.pull-right{
+	float: right !important;
+}

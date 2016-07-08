@@ -1,0 +1,45 @@
+.page-header{
+	@extend .text-center;
+	color: $font-dark;
+	font-weight: 400;
+}
+
+.sub-header{
+	font-size: 1rem;
+	color: $font-dark;
+	position: relative;
+	svg{
+		top: 0.125rem;
+		position: absolute;
+		right: -1.25rem;
+		fill: #555 !important;
+		width: 1rem !important;
+		height: 1rem !important;
+	}
+}
+
+.filter-title{
+	font-size: 1.25rem;
+	font-weight: 500;
+	margin-top: 2rem;
+	margin-bottom: .5rem;
+    color: #333;
+	&:first-of-type{
+		margin-top: 1rem;
+	}
+}
+
+.tags{
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #00A9E0;
+	font-size: 0.75rem;
+}
+
+.show-more{
+	text-align: center;
+	font-size: .85rem;
+	color: #00A9E0;
+}

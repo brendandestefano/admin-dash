@@ -1,0 +1,91 @@
+.container{
+	width: 100%;
+	@include border-radius(12px !important);
+	padding: 1rem 1rem 2rem;
+	overflow: overlay;
+	@media #{$wide-screen}{
+		max-width: 75rem;
+		margin: 1rem auto;
+	}
+	@media #{$medium-screen}{
+		max-width: 65rem;
+		margin: 1rem auto;
+	}
+	@media #{$small-screen}{
+		max-width: 100%;
+		margin: 0;
+		@include border-radius(0px !important);
+	}
+}
+.event-input-left-75,
+.date-input{
+	width: 75% !important;
+	float: left;
+	@media #{$small-screen}{
+		width: 100% !important;
+	}
+}
+.event-input-right-25,
+.time-input{
+	width: 24% !important;
+	float: right;
+	@media #{$small-screen}{
+		width: 100% !important;
+	}
+}
+.event-input-left-50{
+	width: 49% !important;
+	float: left;
+	@media #{$small-screen}{
+		width: 100% !important;
+	}
+}
+.event-input-right-50{
+	width: 49% !important;
+	float: right;
+	@media #{$small-screen}{
+		width: 100% !important;
+	}
+}
+.event-input-left-33{
+	width: 32% !important;
+	float: left;
+	@media #{$small-screen}{
+		width: 100% !important;
+	}
+}
+.event-input-middle-33{
+	width: 32% !important;
+	margin-left: 2%;
+	margin-right: 2%;
+	@media #{$small-screen}{
+		width: 100% !important;
+	}
+}
+.event-input-right-33{
+	width: 32% !important;
+	float: right;
+	@media #{$small-screen}{
+		width: 100% !important;
+	}
+}
+.event-input-right-66{
+	width: 66% !important;
+	float: right;
+	margin-left: 1%;
+	@media #{$small-screen}{
+		width: 99% !important;
+	}
+}
+.invitation-left-75{
+	width: 74% !important;
+	float: left;
+	@media #{$small-screen}{
+		width: calc(100% - 2rem) !important;
+	}
+}
+.invitation-left-33{
+	@media #{$small-screen}{
+		display: none;
+	}
+}

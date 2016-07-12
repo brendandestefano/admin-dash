@@ -1,9 +1,144 @@
-.invitations-add{
-	top: 0 !important;
+.overlay-wrapper{
+	position: absolute;
+	left: 0;
+	right: 0;
+	&.animate-top{
+		@include transition(top, 0.6s, ease-in-out);
+		@media all and (max-width: 767px){
+			height: 3.625rem !important;
+			padding-bottom: .5rem;
+			border-bottom: 1px solid #999;
+			margin-top: .5rem;
+			top: initial !important;
+		}
+	}
+	&.animate-bottom{
+		@include transition(bottom, 0.6s, ease-in-out);
+		@media all and (max-width: 767px){
+			bottom: 0 !important;
+			top: 0;
+		}	
+	}
 }
-.invitations-icon{
-	fill: #333;
+.overlay{
+	background: #000;
+	opacity: .65;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+.icon-small{
+	width: 1.5rem;
+}
+.icon-medium{
+	width: 2.5rem !important;
+	height: inherit !important;
+	fill: #979797 !important;
+	path{
+		width: 2.5rem !important;
+		height: inherit !important;
+	}
+}
+.icon-overlay{
+	z-index: 1;
+	position: absolute;
+	left: 50%;
+	margin-left: -0.875rem !important;
+	fill: #FFF !important;
+}
+.navbar{
+	.icon-small{
+		display: block;
+		margin: 0 auto .5rem;
+		padding-top: .5rem;
+		position: relative;
+		fill: #FFF !important;
+		svg{
+			fill: #FFF !important;
+		}
+	}
+}
+.notification{
+	position: absolute;
+	background: #FF0000;
+	width: 1.25rem;
+	padding: 0.313rem;
+	top: 0.125rem;
+	right: -0.8125rem;
+	@include border-radius(50%);
+	&.hidden{
+		visibility: hidden;
+	}
+	span{
+		color: #FFF;
+		font-size: .65rem;
+		text-align: center;
+		display: block;
+	}
+}
+.navbar-avatar-wrapper{
+	height: 100%;
+	position: absolute;
+	bottom: 0 !important;
+	.avatar{
+		position: absolute;
+		bottom: 0;
+		border-bottom: 5px solid $brand-secondary-color;
+		@media all and (max-width: 767px){
+			border: 0;
+		}
+	}
+}
+.banner{
+	position: relative;
+	height: 9rem;
+	@media all and (max-width: 767px){
+		height: 4rem !important;
+	}
+}
+.change-triangle{
+	width: 1.25rem !important;
+	height: inherit !important;
+	margin-bottom: -0.25rem;
+	&.positive{
+		fill: #178817 !important;
+	}
+	&.negative{
+		fill: #CC171B !important;
+	}
+}
+.widget-avatar{
+	@include border-radius(50%);
+	width: 2.5rem;
 	float: left;
-	margin-top: 1rem;
-	margin-right: 0.5rem;
+}
+.connection-avatar-wrapper{
+	.widget-avatar{
+		float: initial;
+		margin: 0 auto;
+		display: block;
+	}
+}
+.text-user-title{
+	svg{
+		fill: #555 !important;
+		width: .75rem !important;
+		vertical-align: middle;
+		height: initial !important;
+	}
+}
+.menu{
+	@media all and (max-width: 767px){
+		img{
+			width: 2rem;
+			max-width: initial;
+		}
+	}
+}
+.connection-icon{
+	fill: $brand-color !important;
+	width: 15.25424% !important;
+	height: inherit !important;
 }

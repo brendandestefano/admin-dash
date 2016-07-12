@@ -1,7 +1,48 @@
+@mixin gradient($start, $end, $location, $alterColors:"true"){
+	background-color: $start;
+
+	@if $alterColors == "true" {
+		background-color: linear-gradient(
+			to $location,
+			darken($start, 5%), lighten($end, 25%)
+		);
+		background-image:
+			linear-gradient(
+				to $location, 
+				darken($start, 5%), lighten($end, 25%)
+			);
+	} @else if $alterColors == "false" {
+		background-color: linear-gradient(
+			to $location,
+			$start, $end
+		);
+		background-image:
+			linear-gradient(
+				to $location, 
+				$start, $end
+			);
+	} 
+	
+}
+
 @mixin border-radius($radius){
 	border-radius: $radius;
 	-moz-border-radius: $radius;
 	-webkit-border-radius: $radius;
+}
+
+@mixin transition($location, $length, $type){
+	-moz-transition: $location $length $type;
+	-ms-transition: $location $length $type;
+	-o-transition: $location $length $type;
+	transition: $location $length $type;
+    -webkit-transition: $location $length $type;
+}
+
+@mixin box-shadow($box-shadow){
+	-webkit-box-shadow: $box-shadow;
+	-moz-box-shadow: $box-shadow;
+	box-shadow: $box-shadow;
 }
 
 @mixin transform($transform){

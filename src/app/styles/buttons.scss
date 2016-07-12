@@ -1,4 +1,34 @@
-.grey-button{
-	background-color: #EEE !important;
-	background-color: rgba(153, 153, 153, 0.2) !important;
+.btn-widget{
+	font-size: 0.688rem;
+	margin: 0.9375rem auto 0;
+	display: block;
+	background: #EEE;
+	border: 1px solid #DDD;
+	padding: .5rem 2.5rem;
+	@include border-radius(1rem);
+	color: #666;
+	outline: 0;
+}
+.btn-table{
+	display: block;
+	background: #EEE;
+	padding: .5rem 2.5rem;
+	@include border-radius(1rem);
+	outline: 0;
+	margin: 0 auto;
+	font-size: 1rem;
+	color: #FFF;
+	border: 0;
+	&.approve{
+		background: #118611;
+	}
+	&.decline{
+		background: #CD171B;
+	}
+	@media (max-width: 1219px) and (min-width: 1050px){
+		font-size: .75rem;
+	}
+	@media all and (min-width: 768px) and (max-width: 1049px){
+		font-size: .75rem;
+	}
 }

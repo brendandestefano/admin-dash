@@ -1,0 +1,17 @@
+.is-hoverable-logo:hover{
+	@media all and (min-width: 768px){
+		.overlay-wrapper{
+			display: block;
+		}
+		&.top{
+			.overlay-wrapper{
+				top: 0 !important;
+			}
+		}
+		&.bottom{
+			.overlay-wrapper{
+				bottom: 0 !important;
+			}
+		}
+	}
+}

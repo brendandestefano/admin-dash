@@ -1,0 +1,32 @@
+.pagination{
+	margin: 1.25rem;
+	margin-top: 0;
+	color: #EEE;
+	width: calc(100% - 2.5rem);
+}
+.previous,
+.next{
+	font-size: 1.35rem;
+	color: #555;
+	@media (max-width: 1219px) and (min-width: 768px){
+		font-size: 1rem;
+	}
+}
+.next{
+	text-align: right;
+}
+.pages{
+	text-align: center;
+	font-size: 1rem;
+	a{
+		color: #999;
+		&.active,
+		&:hover{
+			font-size: 1.2rem;
+			color: #555;
+		}
+	}
+}
+.disabled{
+	color: #999;
+}

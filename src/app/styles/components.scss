@@ -73,11 +73,12 @@
 }
 .hover-wrapper{
 	@media all and (max-width: 767px){
-		height: 3.625rem !important;
-		margin-bottom: .5rem;
-		margin-top: -.5rem;
+		height: 100% !important;
+		padding-bottom: .5rem;
+		padding-left: .5rem;
+		border-bottom: 1px solid #999;
 		img{
-			margin-top: 1rem;
+			margin-top: 1.25rem;
 		}
 	}
 	&.navbar-avatar-wrapper{

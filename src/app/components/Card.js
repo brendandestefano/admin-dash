@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Chartist from 'chartist';
+import {Link} from 'react-router';
 import PositiveIcon from 'material-ui/svg-icons/navigation/arrow-drop-up';
 import NegativeIcon from 'material-ui/svg-icons/navigation/arrow-drop-down';
 
@@ -37,6 +38,8 @@ class Card extends Component{
 		};
 		let count = 0;
 		for(let id in lineData){
+			if(document.getElementById(id.replace('#', '').length == 0))
+				continue;
 			if(count == 0){
 				let chart = new Chartist.Line(document.getElementById(id.replace('#', '')), {series: [lineData[id]]}, options);
 				this.createStatChartGradients(chart);
@@ -90,12 +93,40 @@ class Card extends Component{
 			return <NegativeIcon className="change-triangle negative" />
 	}
 
-	render(){
-		return(
+	getParent(el, selector){
+		while ((el = el.parentElement) && !((el.matches || el.matchesSelector).call(el,selector)));
+    	return el;
+	}
+
+	toggleSelected(e){
+		let card = this.getParent(e.target, '.card');
+		if(document.getElementsByClassName('selected').length > 0 && document.getElementsByClassName('selected')[0] != card){
+			for(let i = 0; i < document.getElementsByClassName('card').length; i++){
+				document.getElementsByClassName('card')[i].className = "card";
+			}
+			this.props.reset();
+			return;
+		}
+		this.props.setType(this.props.filterText);
+		this.props.filterTable(this.props.filterText);
+		for(let i = 0; i < document.getElementsByClassName('card').length; i++){
+			if(document.getElementsByClassName('card')[i] == card)
+				continue;
+			document.getElementsByClassName('card')[i].className = "card";
+		}
+		if(card.className.indexOf('selected') >= 0)
+			card.className = "card";
+		else
+			card.className += " selected";
+	}
+
+	getCard(){
+		if(this.props.path)
+			return(
 			<div className="card">
-				<a href={this.props.path}>
+				<Link to={this.props.path}>
 					<p className="text-category">
-						{this.props.icon} {this.props.cardText}
+						{(this.props.icon) ? this.props.icon : undefined} {this.props.cardText}
 					</p>
 					<div className="chart-wrapper">
 						<div id={this.props.chartId} className={"ct-chart ct-major-twelfth "+((this.props.positive) ? "positive" : "negative")}>
@@ -107,8 +138,30 @@ class Card extends Component{
 						<span className={(this.props.positive) ? "positive" : "negative"}>{this.props.changeCount} &bull; {this.props.changePercentage+"%"}</span><br />
 						<span className="timeframe">Monthly Change</span>
 					</p>
-				</a>	
-			</div>
+				</Link>
+			</div>);
+		else
+			return(
+				<div className="card" onClick={(e) => this.toggleSelected(e)}>
+					<p className="text-category">
+						{(this.props.icon) ? this.props.icon : undefined} {this.props.cardText}
+					</p>
+					<div className="chart-wrapper">
+						<div id={this.props.chartId} className={"ct-chart ct-major-twelfth "+((this.props.positive) ? "positive" : "negative")}>
+						</div>
+					</div>
+					<p className="text-total-count">{this.props.totalCount}</p>
+					<p className="text-data-change">
+						{this.getChangeTriangle()}
+						<span className={(this.props.positive) ? "positive" : "negative"}>{this.props.changeCount} &bull; {this.props.changePercentage+"%"}</span><br />
+						<span className="timeframe">Monthly Change</span>
+					</p>
+				</div>);
+	}
+
+	render(){
+		return(
+			this.getCard()
 		);
 	}
 }

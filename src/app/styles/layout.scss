@@ -49,6 +49,22 @@
 		}
 	}
 }
+.drilldown{
+	overflow: overlay;
+	.card{
+		@include container;
+		@include span(3 of 12 no-gutters wide);
+		@media all and (min-width: 768px){
+			&:first-of-type{
+				@include span(3 of 12 no-gutters);
+			}
+		}
+		@media all and (max-width: 767px){
+			display: none;
+		}
+	}
+}
+
 .graph{
 	@include container;
 	@media all and (min-width: 768px){

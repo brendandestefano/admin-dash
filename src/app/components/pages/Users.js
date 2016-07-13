@@ -1,14 +1,9 @@
 import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow, TableRowColumn}
-	from 'material-ui/Table';
-import AscIcon from 'material-ui/svg-icons/navigation/arrow-upward';
-import DescIcon from 'material-ui/svg-icons/navigation/arrow-downward';
-import TextField from 'material-ui/TextField';
+import Drilldown from '../Drilldown';
 import VerticalNavbar from '../VerticalNavbar';
 import Banner from '../Banner';
-import Card from '../Card';
 require('../../styles/import.scss');
 
 const muiTheme = getMuiTheme({
@@ -50,136 +45,14 @@ const dataOrder = {
 	staff: ["firstName", "lastName", "grad", "title", "employer", "mentor", "city", "state", "email", "logins", "lastLogin"],
 };
 
+const cards = [
+	{cardText: "Students", totalCount: "5,232", changeCount : "345", changePercentage : "18.7", positive:true, chartId: "active-users-chart", filterText: "student"},
+	{cardText: "Alumni", totalCount: "2,345", changeCount : "13", changePercentage : "1.7", positive:false, chartId: "mentors-chart", filterText: "alumni"},
+	{cardText: "Parents/Friends", totalCount: "38,343", changeCount : "1.1K", changePercentage : "12.7", positive:false, chartId: "messages-chart", filterText: "parent"},
+	{cardText: "Faculty/Staff", totalCount: "232", changeCount : "12", changePercentage : "14.3", positive:true, chartId: "jobs-chart", filterText: "staff"},
+];
+
 class Users extends Component {
-	constructor(props, context){
-		super(props, context);
-
-		this.state = {
-			sortType: "firstName",
-			sortDirection: "asc",
-			users: [],
-			cardSelected: false,
-			searchPreviousUsers: [],
-			currentType: "student"
-		};
-	}
-	
-	renderIcon(type){
-		if(this.state.sortType != type.index && this.state.sortType != "-"+type.index)
-			return;
-		if(this.state.sortDirection == 'asc')
-			return <AscIcon className="btn-sort" />;
-		else
-			return <DescIcon className="btn-sort" />;
-	}
-
-	sortColumn(type){
-		if(this.state.sortType == type && this.state.sortDirection == "asc"){
-			this.setState({sortType: "-"+type, sortDirection: "desc"});
-		}else
-			this.setState({sortType: type, sortDirection: "asc"});
-	}
-
-	dynamicSort(property){
-		var sortOrder = 1;
-		if(property[0] === "-") {
-			sortOrder = -1;
-			property = property.substr(1);
-		}
-		return function (a,b) {
-			var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-			return result * sortOrder;
-		}
-	}
-
-	renderTableHeaders(type){
-		let tableHeadersOutput = [];
-		for(let index in tableHeaders[type]){
-			tableHeadersOutput.push(
-				<TableHeaderColumn data-type={index}>
-					{tableHeaders[type][index]}{this.renderIcon({index})}
-				</TableHeaderColumn>);
-		}
-		return(<TableRow>{tableHeadersOutput}</TableRow>);
-	}
-
-	renderUsers(type){
-		return this.state.users.sort(this.dynamicSort(this.state.sortType)).map((user, index) => {
-			return(
-				this.getRowData(index, type, user)
-		)});
-	}
-
-	getRowData(index, type, user){
-		let columns = [];
-		for(let i = 0; i < dataOrder[type].length; i++){
-			columns.push(<TableRowColumn>{user[dataOrder[type][i]]}</TableRowColumn>);
-		}
-		return(<TableRow key={index}>{columns}</TableRow>);
-	}
-
-	setUsers(){
-		this.setState({users: users});
-	}
-
-	attachClickListeners(){
-		let headers = document.getElementsByClassName('table')[0].getElementsByTagName('th');
-		for(let i = 0; i < headers.length; i++){
-			let globalThis = this;
-			headers[i].addEventListener('click', function(){globalThis.sortColumn(headers[i].getAttribute('data-type'))}, false);
-		}
-	}
-
-	componentDidMount(){
-		this.setUsers();
-		this.attachClickListeners();
-	}
-
-	filterTable(type){
-		if(this.state.cardSelected == true){
-			this.setState({users: users, cardSelected: false});
-			return;
-		}
-		let result = this.state.users.filter((user, index) => {
-			return user.type == type;
-		});
-		this.setState({users: result, cardSelected: true, currentType: type});
-	}
-
-	getInitialUsers(){
-		return users;
-	}
-
-	searchUsers(event){
-		let searchPreviousUsers = (this.state.users.length == 0 || event.target.value == '') ? this.getInitialUsers() : this.state.users;
-		this.setState({searchPreviousUsers: searchPreviousUsers});
-		let searchValue = event.target.value;
-		let users = (length >= searchValue.length) ? this.state.searchPreviousUsers : this.state.users;
-		length = searchValue.length;
-		const result = users.filter(function(user, key) {
-		    return user.firstName.toLowerCase().indexOf(searchValue) != -1 || user.lastName.toLowerCase().indexOf(searchValue) != -1;
-		});
-		this.setState({users: (searchValue == '' && this.state.searchPreviousUsers.length > 0) ? this.getInitialUsers() : result});
-	}
-
-	switchCurrentType(type){
-		if(this.state.currentType == type)
-			this.setState({currentType: 'student'});
-		else
-			this.setState({currentType: type});
-	}
-
-	resetState(){
-		this.setState({
-			sortType: "firstName",
-			sortDirection: "asc",
-			users: users,
-			cardSelected: false,
-			searchPreviousUsers: [],
-			currentType: "student"
-		});
-	}
-
 	render() {
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}>
@@ -188,89 +61,17 @@ class Users extends Component {
 					<div className="main">
 						<Banner backgroundUrl="https://www.filepicker.io/api/file/xwfciiM0Sw2iqkc2SDCY" text="Colby College" export={true}/>
 						<div className="drilldown">
-							<Card 
-								cardText="Students"
-								totalCount="5,232"
-								changeCount="345"
-								changePercentage="18.7"
-								positive={true}
-								chartId="active-users-chart"
-								filterTable={this.filterTable.bind(this)}
-								filterText="student"
-								setType={this.switchCurrentType.bind(this)}
-								reset={this.resetState.bind(this)}
+							<Drilldown 
+								originalSortType="firstName"
+								originalSortDirection="asc"
+								currentType="student"
+								searchText="Search for people by first or last name"
+								searchTerm="user"
+								data={users}
+								tableHeaders={tableHeaders}
+								dataOrder={dataOrder}
+								cards={cards}
 							/>
-							<Card 
-								cardText="Alumni"
-								totalCount="2,345"
-								changeCount="13"
-								changePercentage="1.7"
-								positive={false}
-								chartId="mentors-chart"
-								filterTable={this.filterTable.bind(this)}
-								filterText="alumni"
-								setType={this.switchCurrentType.bind(this)}
-								reset={this.resetState.bind(this)}
-							/>
-							<Card 
-								cardText="Parents/Friends"
-								totalCount="38,343"
-								changeCount="1.1K"
-								changePercentage="12.7"
-								positive={false}
-								chartId="messages-chart"
-								filterTable={this.filterTable.bind(this)}
-								filterText="parent"
-								setType={this.switchCurrentType.bind(this)}
-								reset={this.resetState.bind(this)}
-							/>
-							<Card 
-								cardText="Faculty/Staff"
-								totalCount="245"
-								changeCount="12"
-								changePercentage="14.3"
-								positive={true}
-								chartId="jobs-chart"
-								filterTable={this.filterTable.bind(this)}
-								filterText="staff"
-								setType={this.switchCurrentType.bind(this)}
-								reset={this.resetState.bind(this)}
-							/>
-							<TextField
-								hintText="Search for people by first or last name"
-								fullWidth={true}
-								onChange={(e) => this.searchUsers(e)}
-								inputStyle={{color: "#555"}}
-								style={{marginTop: "2rem"}}
-							/>
-							<Table
-								fixedHeader={true}
-								className="table"
-								wrapperStyle={{width: "100%", float: "left"}}
-							>
-								<TableHeader
-									adjustForCheckbox={false}
-									displaySelectAll={false}
-								>
-									{this.renderTableHeaders(this.state.currentType)}
-								</TableHeader>
-								<TableBody
-									displayRowCheckbox={false}
-								>
-									{this.renderUsers(this.state.currentType)}
-								</TableBody>	
-							</Table>
-							<div className="pagination">
-								<p className="previous disabled">&lt;&lt; Previous</p>
-								<p className="pages">
-									<a href="" className="active">1</a>
-									<a href="">2</a>
-									<a href="">3</a>
-									<a href="">4</a>
-									<a href="">5</a>
-								</p>
-								<p className="next">Next &gt;&gt;</p>
-							</div>
 						</div>
 					</div>
 				</div>

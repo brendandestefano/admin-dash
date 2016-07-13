@@ -77,12 +77,12 @@ class VerticalNavbar extends Component{
 								onLoadDirection="top"
 								setBanner={true}
 							/>
-							<CTMenuItem icon={<DashboardIcon />} text="Dashboard" key="1" isActive={this.isActiveTab(1)}/>
-							<CTMenuItem icon={<ReportsIcon />} text="Reports" key="2" isActive={this.isActiveTab(2)}/>
-							<CTMenuItem icon={<EventsIcon />} text="Events" key="3" isActive={this.isActiveTab(3)}/>
-							<CTMenuItem icon={<JobsIcon />} text="Jobs" key="4" isActive={this.isActiveTab(4)}/>
-							<CTMenuItem icon={<CompaniesIcon />} text="Companies" key="5" isActive={this.isActiveTab(5)}/>
-							<CTMenuItem icon={<RequestsIcon />} text="Requests" key="6" isActive={this.isActiveTab(6)}/>
+							<CTMenuItem icon={<DashboardIcon />} text="Dashboard" key="1" isActive={this.isActiveTab(1)} path="/"/>
+							<CTMenuItem icon={<ReportsIcon />} text="Reports" key="2" isActive={this.isActiveTab(2)} path="reports"/>
+							<CTMenuItem icon={<EventsIcon />} text="Events" key="3" isActive={this.isActiveTab(3)} path="events"/>
+							<CTMenuItem icon={<JobsIcon />} text="Jobs" key="4" isActive={this.isActiveTab(4)} path="jobs"/>
+							<CTMenuItem icon={<CompaniesIcon />} text="Companies" key="5" isActive={this.isActiveTab(5)} path="companies"/>
+							<CTMenuItem icon={<RequestsIcon />} text="Requests" key="6" isActive={this.isActiveTab(6)} path="requests"/>
 							<ImageWithOverlay 
 								src="https://www.filepicker.io/api/file/l1K7rCntQeuyQXHpwlhr"
 								wrapperClasses="overlay-wrapper navbar-avatar-wrapper js-avatar-target hover-wrapper is-hoverable-logo bottom"

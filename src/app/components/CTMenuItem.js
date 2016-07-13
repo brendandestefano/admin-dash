@@ -1,15 +1,16 @@
 import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
 
-const CTMenuItem = ({icon, text, isActive}) => {
+const CTMenuItem = ({icon, text, isActive, path}) => {
 	const className = (isActive) ? 'navbar-item active' : 'navbar-item';
 	return(
 		<div className={className}>
-			<a href="/">
+			<Link to={path}>
 				<div className="icon-small">
 					{icon}
 				</div>
 				<p className="text-navbar">{text}</p>
-			</a>
+			</Link>
 		</div>
 	);
 }

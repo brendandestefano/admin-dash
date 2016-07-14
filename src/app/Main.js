@@ -35,7 +35,7 @@ class Main extends Component {
 					<VerticalNavbar />
 					<div className="main">
 						<div className="content">
-							<Banner backgroundUrl="https://www.filepicker.io/api/file/xwfciiM0Sw2iqkc2SDCY" text="Wheaton University"/>
+							<Banner backgroundUrl="https://www.filepicker.io/api/file/xwfciiM0Sw2iqkc2SDCY" text="Wheaton College"/>
 							<div className="cards-wrapper">
 								<div className="card-row">
 									<Card 

@@ -1,91 +1,112 @@
-.container{
-	width: 100%;
-	@include border-radius(12px !important);
-	padding: 1rem 1rem 2rem;
-	overflow: overlay;
-	@media #{$wide-screen}{
-		max-width: 75rem;
-		margin: 1rem auto;
-	}
-	@media #{$medium-screen}{
-		max-width: 65rem;
-		margin: 1rem auto;
-	}
-	@media #{$small-screen}{
-		max-width: 100%;
-		margin: 0;
-		@include border-radius(0px !important);
+.navbar{
+	@include container;
+	@include span(1 of 12 first no-gutters wide);
+	@media all and (max-width: 767px){
+		width: 16rem;
+		z-index: 4;
+		background-color: transparent !important;
+		background-image: none !important;
 	}
 }
-.event-input-left-75,
-.date-input{
-	width: 75% !important;
-	float: left;
-	@media #{$small-screen}{
-		width: 100% !important;
+.main{
+	@include container;
+	@include span(11 of 12 last no-gutters);
+	@media all and (max-width: 767px){
+		@include span(12 of 12 no-gutters);
 	}
 }
-.event-input-right-25,
-.time-input{
-	width: 24% !important;
-	float: right;
-	@media #{$small-screen}{
-		width: 100% !important;
-	}
+.content{
+	@include container;
+	@include span(9 of 12 first no-gutters wide);
+	@media all and (max-width: 767px){
+		@include span(12 of 12 no-gutters);
+	}	
 }
-.event-input-left-50{
-	width: 49% !important;
-	float: left;
-	@media #{$small-screen}{
-		width: 100% !important;
-	}
-}
-.event-input-right-50{
-	width: 49% !important;
-	float: right;
-	@media #{$small-screen}{
-		width: 100% !important;
-	}
-}
-.event-input-left-33{
-	width: 32% !important;
-	float: left;
-	@media #{$small-screen}{
-		width: 100% !important;
-	}
-}
-.event-input-middle-33{
-	width: 32% !important;
-	margin-left: 2%;
-	margin-right: 2%;
-	@media #{$small-screen}{
-		width: 100% !important;
-	}
-}
-.event-input-right-33{
-	width: 32% !important;
-	float: right;
-	@media #{$small-screen}{
-		width: 100% !important;
-	}
-}
-.event-input-right-66{
-	width: 66% !important;
-	float: right;
-	margin-left: 1%;
-	@media #{$small-screen}{
-		width: 99% !important;
-	}
-}
-.invitation-left-75{
-	width: 74% !important;
-	float: left;
-	@media #{$small-screen}{
-		width: calc(100% - 2rem) !important;
-	}
-}
-.invitation-left-33{
-	@media #{$small-screen}{
+.engagement{
+	@include container;
+	@include span(3 of 12 last no-gutters);
+	@media all and (max-width: 767px){
 		display: none;
+	}
+}
+.cards-wrapper,
+.card-row,
+.graphs-wrapper{
+	@include container;
+	@include span(12 of 12 no-gutters);
+}
+.card-row{
+	.card{
+		@include container;
+		@include span(4 of 12 no-gutters wide);
+		@media all and (min-width: 768px){
+			&:first-of-type{
+				@include span(4 of 12 no-gutters);
+			}
+		}
+		@media all and (max-width: 767px){
+			@include span(12 of 12 no-gutters);
+		}
+	}
+}
+.drilldown{
+	overflow: overlay;
+	.card{
+		@include container;
+		@include span(3 of 12 no-gutters wide);
+		@media all and (min-width: 768px){
+			&:first-of-type{
+				@include span(3 of 12 no-gutters);
+			}
+		}
+		@media all and (max-width: 767px){
+			display: none;
+		}
+	}
+}
+
+.graph{
+	@include container;
+	@media all and (min-width: 768px){
+		&:nth-of-type(1){
+			@include span(6 of 12 first);
+		}
+		&:nth-of-type(2){
+			@include span(6 of 12 last);
+		}
+		&:nth-of-type(3){
+			@include span(12 of 12);
+		}
+	}
+	@media all and (max-width: 767px){
+		@include span(12 of 12);
+	}
+}
+.connection-avatar-wrapper{
+	@include container;
+	@include span(5 no-gutters);
+}
+.connection-icon{
+	@include container;
+	@include span(2 no-gutters);
+}
+.table-wrapper{
+	@include container;
+	@include span(12 of 12);
+}
+.pagination{
+	@include container;
+	@include span(12 of 12);
+	.previous{
+		@include container;
+		@include span(2 of 12 no-gutters);
+	}
+	.next{
+		@include container;
+		@include span(2 of 12 no-gutters);
+	}
+	.pages{
+		@include container;
+		@include span(8 of 12 no-gutters wider);	
 	}
 }

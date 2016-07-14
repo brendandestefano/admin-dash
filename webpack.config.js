@@ -51,6 +51,13 @@ const config = {
         'style', // backup loader when not disting .css file
         'css!sass' // loaders to preprocess CSS
         )
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
       }
     ],
   },

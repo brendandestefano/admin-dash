@@ -1,0 +1,39 @@
+.pagination{
+	margin: 1.25rem;
+	margin-top: 3rem;
+	color: #EEE;
+	width: calc(100% - 2.5rem);
+}
+.previous,
+.next{
+	font-size: 1.35rem;
+	color: #555;
+	@media (max-width: 1219px) and (min-width: 768px){
+		font-size: 1rem;
+	}
+	@media all and (max-width: 767px){
+		font-size: .75rem;
+	}
+}
+.next{
+	text-align: right;
+}
+.pages{
+	text-align: center;
+	font-size: 1rem;
+	@media all and (max-width: 767px){
+		font-size: .75rem;
+	}
+	a{
+		color: #999;
+		margin: 0 .5rem;
+		&.active,
+		&:hover{
+			font-size: 1.2rem;
+			color: #555;
+		}
+	}
+}
+.disabled{
+	color: #999;
+}

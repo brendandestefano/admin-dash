@@ -1,0 +1,61 @@
+.navbar{
+	@include gradient($brand-color, $brand-color, bottom);
+	height: 100vh;
+	overflow: hidden;
+	position: fixed;
+	.navbar-item{
+		width: 100%;
+		&.active,
+		&:hover{
+			@media all and (min-width: 768px){
+				background: lighten($brand-color, 20%);
+				.text-navbar{
+					visibility: visible;
+				}
+			}
+		}	
+		@media all and (max-width: 767px){
+			height: 3.625rem;
+			border-bottom: 1px solid #999;
+			&.active{
+				background: $text-dark-grey;
+				.text-navbar{
+					color: #FFF;
+				}
+			}
+			.icon-small{
+				float: left;
+				padding-top: 1rem;
+				width: inherit;
+				padding-left: .5rem;
+			}
+			.text-navbar{
+				font-size: 1.5rem;
+				top: .85rem;
+				text-align: left;
+				margin-left: 3.5rem;
+				padding-top: 1rem;
+				visibility: visible;
+			}
+		}
+	}
+}
+.navbar-wrapper{
+	background: inherit !important;
+	@media all and (min-width: 768px){
+		width: inherit !important;
+	}
+	@media all and (max-width: 767px){
+		background-color: #CCC !important;
+	}
+	@include box-shadow(none !important);
+}
+.menu-toggler{
+	@include box-shadow(none !important);
+	background-color: transparent !important;
+	position: absolute;
+	z-index: 1;
+	button{
+		background-color: transparent !important;
+	}
+}

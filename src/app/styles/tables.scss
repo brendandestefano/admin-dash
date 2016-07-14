@@ -1,0 +1,28 @@
+.table{
+	thead{
+		tr{
+			border-bottom-width: 1px !important;
+			th{
+				font-size: 1.1rem !important;
+				color: $brand-color !important;
+				white-space: normal !important;
+				@media all and (max-width: 767px){
+					svg{
+						display: none !important;
+					}
+				}
+			}
+		}
+	}
+	th,td{
+		vertical-align: middle;
+		@media all and (max-width: 767px){
+			&:nth-of-type(n+3){
+				display: none;
+			}
+		}
+	}
+	td{
+		font-size: .85rem !important;
+	}
+}

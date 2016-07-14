@@ -1,0 +1,113 @@
+.ct-chart{
+	&.positive{
+		.ct-line{
+			stroke: url(#gradientPositive) !important;
+		}
+	}
+	&.negative{
+		.ct-line{
+			stroke: url(#gradientNegative) !important;
+		}
+	}
+	.ct-line{
+		stroke-width: 5;
+	}
+}
+.ct-major-twelfth{
+	max-height: inherit !important;
+}
+.ct-label.ct-horizontal{
+	@media all and (min-width: 768px){
+		font-size: 0.625em !important;
+	}
+	@media all and (max-width: 767px){
+	    font-size: 0.5em !important;
+	}    
+}
+#bar-chart,
+#line-chart{
+	height: 19.375em;
+	.ct-series-a{
+		line,path{
+			stroke: #61d8ff !important;
+		}
+	}
+	.ct-series-b{
+		line,path{
+			stroke: #00A9E0 !important;
+		}
+	}
+	.ct-series-c{
+		line,path{
+			stroke: #0096c7 !important;
+		}
+	}
+}
+.ct-bar{
+	@media all and (min-width: 768px){
+		stroke-width: 1.25rem !important;
+	}
+	@media all and (max-width: 767px){
+		stroke-width: .5rem !important;
+	}
+}
+#pie-chart{
+	height: 19.375em;
+	.ct-series-a{
+		path{
+			fill: #61d8ff !important;
+		}
+	}
+	.ct-series-b{
+		path{
+			fill: #00A9E0 !important;
+		}
+	}
+	.ct-series-c{
+		path{
+			fill: #0096c7 !important;
+		}
+	}
+	.ct-series-d{
+		path{
+			fill: #005687 !important;
+		}
+	}
+	.ct-label{
+		color: #FFF !important;
+		fill: #FFF !important;
+		font-size: 1em !important;
+	}
+}
+$ct-series-colors: (#61d8ff, #00A9E0, #0096c7, #005687) !default;
+.bar-legend,
+.line-legend,
+.pie-legend{
+	text-align: center;
+	li{
+		position: relative;
+        padding-left: 1.3em;
+        margin-bottom: 0.3em;
+        list-style-type: none;
+		display: inline-block;
+		margin-right: 1em;
+		p{
+			margin: 0;
+			color: #777;
+		}
+        &::before{
+        	height: 1em;
+	        width: 1em;
+	        position: absolute;
+	        top: 0.1em;
+	        left: 0;
+	        content: '';
+	        border-radius: 1em;
+        }
+	}
+	@for $i from 0 to length($ct-series-colors) {
+          .ct-series-#{$i}::before {
+            background: nth($ct-series-colors, $i + 1);
+        }
+    }
+}

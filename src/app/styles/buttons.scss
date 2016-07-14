@@ -1,4 +1,88 @@
-.grey-button{
-	background-color: #EEE !important;
-	background-color: rgba(153, 153, 153, 0.2) !important;
+.btn-widget{
+	font-size: 0.688rem;
+	margin: 0.9375rem auto 0;
+	display: block;
+	background: #EEE;
+	border: 1px solid #DDD;
+	padding: .5rem 2.5rem;
+	@include border-radius(1rem);
+	color: #666;
+	outline: 0;
+}
+.btn-table{
+	display: block;
+	background: #EEE;
+	padding: .5rem 2.5rem;
+	@include border-radius(1rem);
+	outline: 0;
+	margin: 0 auto;
+	font-size: 1rem;
+	color: #FFF;
+	border: 0;
+	&.approve{
+		background: #118611;
+	}
+	&.decline{
+		background: #CD171B;
+	}
+	@media (max-width: 1219px) and (min-width: 1050px){
+		font-size: .75rem;
+	}
+	@media all and (min-width: 768px) and (max-width: 1049px){
+		font-size: .75rem;
+	}
+}
+.btn-export{
+	background-color: $brand-secondary-color !important;
+	color: #FFF !important;
+	position: absolute !important;
+	top: 3rem;
+	right: 2rem;
+	@include border-radius(1rem !important);
+	@media all and (max-width: 1024px) and (min-width: 768px){
+		top: 2rem;
+	}
+	@media all and (max-width: 767px){
+		display: none !important;
+	}
+}
+.btn-sort{
+	position: absolute;
+	left: 0;
+	width: 1rem !important;
+	top: 1rem;
+}
+.btn-toggle{
+	display: none !important;
+	@media all and (max-width: 767px){
+		display: block !important;
+		position: absolute !important;
+		top: .5rem;
+		z-index: 5;
+		left: -.5rem;
+		background-color: transparent !important;
+		button{
+			background-color: transparent !important;
+		}
+		svg{
+			fill: #FFF !important;
+		}
+	}
+}
+.btn-toggle-close{
+	right: 0;
+	@include box-shadow(none !important);
+	left: inherit !important;
+	width: 75px;
+}
+.btn-settings{
+	background-color: transparent !important;
+	div{
+		div{
+			div{
+				top: -.5rem !important;
+				right: 50% !important;
+			}
+		}
+	}
 }

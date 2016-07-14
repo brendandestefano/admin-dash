@@ -1,117 +1,155 @@
-.ticket{
-	float: left;
-    width: 100%;
-	.input-field{
-		float: left;
-		margin-left: 1%;
-		min-height: 4rem;
+.main{
+	height: 100vh;
+}
+.content{
+	overflow: scroll;
+	height: 100%;
+}
+.graphs-wrapper{
+	@media all and (max-width: 767px){
+		z-index: 3;
 		position: relative;
-		&:nth-of-type(1){
-			margin-left: 0;
-			width: 50% !important;
-		}
-		&:nth-of-type(2),
-		&:nth-of-type(3){
-			width: 22% !important;
-		}
-		&:nth-of-type(4){
-			width: 2% !important;
-			float: right;
-		}
-		button{
-			position: absolute !important;
-			bottom: -0.5rem;
-			right: 0;
-			min-width: initial !important;
-		}
+	}
+	hr{
+		border: 1px solid #CCC;
+		width: 60%;
+		margin-top: 2rem;
+		margin-bottom: 3.25rem;
 	}
 }
-.ticket,
-.reminder{
-	&:last-of-type{
-		.break{
-			display: none;
-		}
-	}
+.graph{
+	height: 27.375rem;
 }
-.break{
-	border: 1px solid #EA7600;
-	width: 50%;
-	margin-top: 3rem;
+.engagement{
+	background: #E3E8E9;
+	overflow: scroll;
+	height: 100%;
 }
-.reminder{
-	float: left;
-    width: 100%;
-	.input-field{
-		margin-left: 1%;
-		min-height: 4rem;
-		position: relative;
-		width: 31% !important;
-		float: left;
-		&:nth-of-type(1){
-			margin-left: 0;
-		}
-		&:nth-of-type(1),
-		&:nth-of-type(2){
-			*{
-				width: 100% !important;
-			}
-		}
-		&:nth-of-type(3){
-			margin-top: -1.5rem;
-		}
-		&:nth-of-type(4){
-			width: 4% !important;
-			float: right;
-			margin-top: 0.6875rem;
-			margin-bottom: -0.6875rem;
-			button{
-				float: right;
-				width: 1.5rem;
-				float: right;
-				div,svg{
-					width: 1.5rem;
-					float: right;
-				}
-			}
-		}
-	}
-	.break{
-		margin-bottom: 3rem;
-	}
-}
-.tag-chip{
+.search-bar{
+	background: #D9DFE1;
+	height: 3.25rem;
+	padding: 0.938rem 0.625rem;
 	svg{
-		fill: #FFF !important;
+		width: 1.25rem !important;
+		margin-right: 0.313rem;
+		height: initial !important;
+		fill: #555 !important;
 	}
-}
-.filter-container{
-	border-bottom: 1px solid #E0E0E0;
-	padding-bottom: 1rem;
-	overflow-y: scroll;
-	&:last-of-type{
-		border-bottom: 0;
-	}
-	.filter{
-		input{
-			height: 1.5rem !important;
+	input{
+		border: 0;
+		background: transparent;
+		color: #999;
+		font-family: inherit;
+		font-size: 0.875rem;
+		max-width: 8.125rem;
+		outline: none;
+		vertical-align: top;
+		@media all and (max-width: 980px){
+			margin-top: .25rem;
+			font-size: 0.65rem;
 		}
-		&:nth-of-type(n+6){
-			display: none !important;
+	}
+}
+.widgets-wrapper{
+	height: 100%;
+	max-height: 100%;
+	padding: 0.938rem;
+	hr{
+		border: 1px solid #FFF;
+		width: 75%;
+		margin-top: 1.75rem;
+		margin-bottom: 1.75rem;
+	}
+}
+.widget{
+	margin-bottom: 1rem;
+	span{
+		background-color: transparent !important;
+	}
+	.user-details-wrapper{
+		height: 100% !important;
+		font-size: 0.8125rem !important;
+	}
+}
+.hover-wrapper{
+	@media all and (max-width: 767px){
+		height: 100% !important;
+		padding-bottom: .5rem;
+		padding-left: .5rem;
+		border-bottom: 1px solid #999;
+		img{
+			margin-top: 1.25rem;
+		}
+	}
+	&.navbar-avatar-wrapper{
+		@media all and (max-width: 767px){
+			.text-navbar{
+				top: 1.75rem;
+			}
 		}
 	}
 }
-.selected{
-	opacity: .25;
-	background: none !important;
+.z-index-helper{
+	z-index: 4;
 }
-.invitation-column{
-	max-height: 39.63rem;
-	overflow-y: scroll;
+.sort-wrapper{
+	float: right;
+	width: .75rem;
+	position: relative;
+	height: 1.125rem;
+	img{
+		position: absolute;
+		width: .75rem;
+		&:first-of-type{
+			top: 0;
+		}
+		&:last-of-type{
+			bottom: 0;
+		}
+	}
+	&.asc{
+		img{
+			top: 50%;
+			margin-top: -0.25rem;
+			&:last-of-type{
+				display: none;
+			}
+		}
+	}
+	&.desc{
+		img{
+			bottom: 50%;
+			margin-bottom: -0.25rem;
+			&:first-of-type{
+				display: none;
+			}
+		}
+	}
+	@media (max-width: 1219px) and (min-width: 1050px){
+		width: .5rem;
+		height: 0.75rem;
+	}
+	@media all and (min-width: 768px) and (max-width: 1049px){
+		display: none;
+		&.asc,
+		&.desc{
+			display: block;
+			width: .5rem;
+			height: 0.75rem;
+			margin-top: -.75rem;
+		}
+	}
 }
-.invitation-selected-column{
-	height: 42.63rem;
-	max-height: 42.63rem;
-	background: #EEE;
-	overflow-y: scroll;
+.widget-list-wrapper{
+	padding: 0 !important;
+}
+.tabs-content-wrapper{
+	div{
+		&:not(.search-field){
+			height: 100% !important;
+		}
+	}
+	.search-field{
+		div{height: initial !important}
+	}
 }

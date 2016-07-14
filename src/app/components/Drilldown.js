@@ -92,8 +92,23 @@ class Drilldown extends Component{
 		this.setState({data: this.props.data});
 	}
 
+	getAllElementsWithAttribute(attribute)
+	{
+	var matchingElements = [];
+	var allElements = document.getElementsByTagName('*');
+	for (var i = 0, n = allElements.length; i < n; i++)
+	{
+	if (allElements[i].getAttribute(attribute) !== null)
+	{
+	// Element exists with attribute. Add to array.
+	matchingElements.push(allElements[i]);
+	}
+	}
+	return matchingElements;
+	}
+
 	attachClickListeners(){
-		let headers = document.getElementsByClassName('table')[0].getElementsByTagName('th');
+		let headers = this.getAllElementsWithAttribute('data-type');
 		for(let i = 0; i < headers.length; i++){
 			let globalThis = this;
 			headers[i].addEventListener('click', function(){globalThis.sortColumn(headers[i].getAttribute('data-type'))}, false);

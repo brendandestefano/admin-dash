@@ -41,16 +41,16 @@ const users = [
 ];
 
 const companies = [
-  {id:0, company: "Amked Technologies", size: "50", industry: "Manufacturing", city: "Atlanta", state: "MA", postedJobs: "4", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", type: "For Profit"},
-  {id:1, company: "Axis Inc.", size: "35", industry: "Software", city: "Boston", state: "MA", postedJobs: "2", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", type: "Non Profit"},
-  {id:2, company: "Prestige Worldwide", size: "100", industry: "Venture Capitalist", city: "Miami", state: "MA", postedJobs: "7", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", type: "Government"},
-  {id:3, company: "Edna Rubber Co.", size: "400", industry: "Tires", city: "Philadelphia", state: "MA", postedJobs: "9", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", type: "On Campus"},
-  {id:4, company: "Redwood Investments", size: "45", industry: "Investment Banking", city: "San Francisco", state: "MA", postedJobs: "4", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", type: "Government"},
-  {id:5, company: "Clark Trading Inc.", size: "50", industry: "Hedge Fund", city: "Chicago", state: "MA", postedJobs: "3", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", type: "Non Profit"},
-  {id:6, company: "Alto Air", size: "80", industry: "Airline", city: "Nantucket", state: "MA", postedJobs: "6", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", type: "For Profit"},
-  {id:7, company: "Bali Productions", size: "60", industry: "Film Production", city: "Salem", state: "MA", postedJobs: "4", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", type: "Non Profit"},
-  {id:8, company: "Donnelin's Grocery", size: "75", industry: "Produce Chain", city: "Houston", state: "MA", postedJobs: "5", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", type: "Government"},
-  {id:9, company: "FastAgro Inc.", size: "80", industry: "Food Production", city: "Dallas", state: "MA", postedJobs: "4", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", type: "On Campus"}
+  {id:0, company: "Amked Technologies", size: "50", industry: "Manufacturing", city: "Atlanta", state: "MA", postedJobs: "4", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", website: "www.google.com", type: "For Profit"},
+  {id:1, company: "Axis Inc.", size: "35", industry: "Software", city: "Boston", state: "MA", postedJobs: "2", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", website: "www.google.com", type: "Non Profit"},
+  {id:2, company: "Prestige Worldwide", size: "100", industry: "Venture Capitalist", city: "Miami", state: "MA", postedJobs: "7", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", website: "www.google.com", type: "Government"},
+  {id:3, company: "Edna Rubber Co.", size: "400", industry: "Tires", city: "Philadelphia", state: "MA", postedJobs: "9", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", website: "www.google.com", type: "On Campus"},
+  {id:4, company: "Redwood Investments", size: "45", industry: "Investment Banking", city: "San Francisco", state: "MA", postedJobs: "4", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", website: "www.google.com", type: "Government"},
+  {id:5, company: "Clark Trading Inc.", size: "50", industry: "Hedge Fund", city: "Chicago", state: "MA", postedJobs: "3", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", website: "www.google.com", type: "Non Profit"},
+  {id:6, company: "Alto Air", size: "80", industry: "Airline", city: "Nantucket", state: "MA", postedJobs: "6", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", website: "www.google.com", type: "For Profit"},
+  {id:7, company: "Bali Productions", size: "60", industry: "Film Production", city: "Salem", state: "MA", postedJobs: "4", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", website: "www.google.com", type: "Non Profit"},
+  {id:8, company: "Donnelin's Grocery", size: "75", industry: "Produce Chain", city: "Houston", state: "MA", postedJobs: "5", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", website: "www.google.com", type: "Government"},
+  {id:9, company: "FastAgro Inc.", size: "80", industry: "Food Production", city: "Dallas", state: "MA", postedJobs: "4", alumniCount: "300", contact: "Remy Carpinito", email: "test@test.com", website: "www.google.com", type: "On Campus"}
 ];
 
 const jobs = [
@@ -102,7 +102,7 @@ const declined = [
 
 const tableHeaders = {
 	user: {firstName: "First Name", lastName: "Last Name", grad: "Grad Year", email: "E-mail", approve: "Approve", decline: "Decline"},
-	company: {company: "Company", size: "Size", industry: "Industry", type: "Type", contact: "Contact", email: "E-mail", approve: "Approve", decline: "Decline"},
+	company: {company: "Company", size: "Size", industry: "Industry", type: "Type", website: "Website", contact: "Contact", email: "E-mail", approve: "Approve", decline: "Decline"},
 	job: {title: "Job Title", company: "Company", poster: "Poster", approve: "Approve", decline: "Decline"},
 	event: {title: "Event Title", tags: "Tags", contact: "Contact", email: "Contact E-mail", approve: "Approve", decline: "Decline"},
 	approved: {firstName: "First Name", lastName: "Last Name", grad: "Grad Year", email: "E-mail"},
@@ -111,7 +111,7 @@ const tableHeaders = {
 
 const dataOrder = {
 	user: ["firstName", "lastName", "grad", "email"],
-	company: ["company", "size", "industry", "type", "contact", "email"],
+	company: ["company", "size", "industry", "type", "website", "contact", "email"],
 	job: ["title", "company", "poster"],
 	event: ["title", "tags", "contact", "email"],
 	approved: ["firstName", "lastName", "grad", "email"],

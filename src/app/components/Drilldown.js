@@ -92,19 +92,14 @@ class Drilldown extends Component{
 		this.setState({data: this.props.data});
 	}
 
-	getAllElementsWithAttribute(attribute)
-	{
-	var matchingElements = [];
-	var allElements = document.getElementsByTagName('*');
-	for (var i = 0, n = allElements.length; i < n; i++)
-	{
-	if (allElements[i].getAttribute(attribute) !== null)
-	{
-	// Element exists with attribute. Add to array.
-	matchingElements.push(allElements[i]);
-	}
-	}
-	return matchingElements;
+	getAllElementsWithAttribute(attribute){
+		var matchingElements = [];
+		var allElements = document.getElementsByTagName('*');
+		for (var i = 0, n = allElements.length; i < n; i++){
+			if (allElements[i].getAttribute(attribute) !== null)
+				matchingElements.push(allElements[i]);
+		}
+		return matchingElements;
 	}
 
 	attachClickListeners(){
@@ -153,6 +148,13 @@ class Drilldown extends Component{
 	jobSearch(data, searchValue){
 		let result = data.filter(function(job, key) {
 		    return job.title.toLowerCase().indexOf(searchValue) != -1;
+		});
+		return result;
+	}
+
+	messageSearch(data, searchValue){
+		let result = data.filter(function(user, key) {
+		    return user.messenger.toLowerCase().indexOf(searchValue) != -1 || user.messengee.toLowerCase().indexOf(searchValue) != -1;
 		});
 		return result;
 	}

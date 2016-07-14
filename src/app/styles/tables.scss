@@ -5,6 +5,7 @@
 			th{
 				font-size: 1.1rem !important;
 				color: $brand-color !important;
+				white-space: normal !important;
 				@media all and (max-width: 767px){
 					svg{
 						display: none !important;

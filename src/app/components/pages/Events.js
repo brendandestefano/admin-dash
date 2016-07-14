@@ -63,7 +63,8 @@ class Events extends Component{
 				<div>
 					<VerticalNavbar setState={true} activeTab={3}/>
 					<div className="main">
-						<Banner backgroundUrl="https://www.filepicker.io/api/file/xwfciiM0Sw2iqkc2SDCY" text="Colby College" export={true}/>
+						<Banner backgroundUrl="https://www.filepicker.io/api/file/xwfciiM0Sw2iqkc2SDCY" text="Wheaton College" export={true}/>
+						<h3 className="sub-header">Events</h3>
 						<div className="drilldown">
 							<Drilldown 
 								originalSortType="title"

@@ -143,3 +143,13 @@
 .widget-list-wrapper{
 	padding: 0 !important;
 }
+.tabs-content-wrapper{
+	div{
+		&:not(.search-field){
+			height: 100% !important;
+		}
+	}
+	.search-field{
+		div{height: initial !important}
+	}
+}

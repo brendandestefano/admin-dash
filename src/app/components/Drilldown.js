@@ -6,6 +6,8 @@ import DescIcon from 'material-ui/svg-icons/navigation/arrow-downward';
 import TextField from 'material-ui/TextField';
 import Card from './Card';
 import EditEvent from './EditEvent';
+import ApproveRequest from './ApproveRequest';
+import DeclineRequest from './DeclineRequest';
 
 class Drilldown extends Component{
 	constructor(props, context){
@@ -76,8 +78,13 @@ class Drilldown extends Component{
 		for(let i = 0; i < this.props.dataOrder[type].length; i++){
 			columns.push(<TableRowColumn>{data[this.props.dataOrder[type][i]]}</TableRowColumn>);
 		}
-		if(this.props.searchTerm == 'event')
+		if(this.props.searchTerm == 'event' && !this.props.additionalTerm)
 			columns.push(<TableRowColumn><EditEvent /></TableRowColumn>);
+		else if(this.props.additionalTerm && this.props.additionalTerm == 'request'){
+			columns.push(<TableRowColumn><ApproveRequest /></TableRowColumn>);
+			columns.push(<TableRowColumn><DeclineRequest /></TableRowColumn>);
+		}else if(this.props.additionalTerm && this.props.additionalTerm == 'declined')
+			columns.push(<TableRowColumn><ApproveRequest /></TableRowColumn>);
 		return(<TableRow key={index}>{columns}</TableRow>);
 	}
 
@@ -193,14 +200,18 @@ class Drilldown extends Component{
 	render(){
 		return(
 			<div>
-				{this.renderCards()}
-				<TextField
-					hintText={this.props.searchText}
-					fullWidth={true}
-					onChange={(e) => this.search(e)}
-					inputStyle={{color: "#555"}}
-					style={{marginTop: "2rem"}}
-				/>
+				{(this.props.cards &&
+					this.renderCards())}
+				{(this.props.searchText != false && 
+					<TextField
+						hintText={this.props.searchText}
+						fullWidth={true}
+						onChange={(e) => this.search(e)}
+						inputStyle={{color: "#555"}}
+						className="search-field"
+						style={{marginTop: "2rem"}}
+					/>
+				)}
 				<Table
 					fixedHeader={true}
 					className="table"

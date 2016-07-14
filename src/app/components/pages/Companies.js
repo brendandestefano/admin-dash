@@ -53,14 +53,15 @@ const cards = [
 
 const disabledColumns = ["settings"];
 
-class Events extends Component{
+class Companies extends Component{
 	render() {
 		return (
 			<MuiThemeProvider muiTheme={muiTheme}>
 				<div>
 					<VerticalNavbar setState={true} activeTab={5}/>
 					<div className="main">
-						<Banner backgroundUrl="https://www.filepicker.io/api/file/xwfciiM0Sw2iqkc2SDCY" text="Colby College" export={true}/>
+						<Banner backgroundUrl="https://www.filepicker.io/api/file/xwfciiM0Sw2iqkc2SDCY" text="Wheaton College" export={true}/>
+						<h3 className="sub-header">Companies</h3>
 						<div className="drilldown">
 							<Drilldown 
 								originalSortType="company"
@@ -82,4 +83,4 @@ class Events extends Component{
 	}
 }
 
-export default Events;
+export default Companies;

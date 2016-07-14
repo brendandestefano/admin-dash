@@ -7,6 +7,7 @@ import Users from './components/pages/Users';
 import Events from './components/pages/Events';
 import Jobs from './components/pages/Jobs';
 import Companies from './components/pages/Companies';
+import Requests from './components/pages/Requests';
 
 injectTapEventPlugin();
 
@@ -17,5 +18,6 @@ render((
 		<Route path="events" component={Events} />
 		<Route path="jobs" component={Jobs} />
 		<Route path="companies" component={Companies} />
+		<Route path="requests" component={Requests} />
 	</Router>
 ), document.getElementById('app'));

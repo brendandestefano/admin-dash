@@ -66,7 +66,7 @@ class VerticalNavbar extends Component{
 								className="btn-toggle btn-toggle-close"
 								onTouchTap={(e) => this.toggleDrawer(e)}/>
 							<ImageWithOverlay 
-								src="https://upload.wikimedia.org/wikipedia/en/a/ad/Colby_college_bicentennial_seal.png"
+								src="https://pbs.twimg.com/profile_images/60951831/Blue_400x400.gif"
 								wrapperClasses="js-school-logo-target hover-wrapper is-hoverable-logo top"
 								innerClasses="overlay-wrapper animate-top js-school-logo-target"
 								logoClasses="js-school-logo"

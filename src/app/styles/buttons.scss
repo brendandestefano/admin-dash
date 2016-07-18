@@ -86,3 +86,19 @@
 		}
 	}
 }
+.btn-run-report{
+	background-color: $brand-color !important;
+	color: #FFF !important;
+	margin: 1.25rem auto !important;
+	display: block !important;
+	&:disabled{
+		background-color: lighten($brand-color, 30%) !important;
+	}
+}
+.reports-stepper-button{
+	span{
+		min-width: 2rem !important;
+		font-size: 16px !important;
+		color: $text-dark-grey !important;
+	}
+}

@@ -1,0 +1,42 @@
+.report-choices,
+.report-list,
+.report-settings{
+	border: 1px solid $border-grey;
+	overflow: overlay;
+	padding: 0.5rem;
+}
+.report-choices{
+	.disabled{
+		opacity: .25;
+	}
+}
+.report-choices,
+.report-list{
+	.selected{
+		background-color: #CCC !important;
+	}
+}
+.default-reports{
+	padding: 0 0 1.5rem;
+	p{
+		float: left;
+		color: $text-dark-grey;
+		margin: .65rem .65rem .65rem 0.5rem;
+	}
+	button{
+		background-color: $brand-color !important;
+		color: #FFF !important;
+		margin-right: .5rem !important;
+	}
+}
+.report-step{
+	span{
+		color: $text-dark-grey !important;
+	}
+}
+.report-list{
+	max-height: 36.25rem;
+	div{
+		color: $text-dark-grey !important;
+	}
+}

@@ -10,6 +10,7 @@ import Companies from './components/pages/Companies';
 import Requests from './components/pages/Requests';
 import Mentors from './components/pages/Mentors';
 import Messages from './components/pages/Messages';
+import Reports from './components/pages/Reports';
 
 injectTapEventPlugin();
 
@@ -23,5 +24,6 @@ render((
 		<Route path="requests" component={Requests} />
 		<Route path="mentors" component={Mentors} />
 		<Route path="messages" component={Messages} />
+		<Route path="reports" component={Reports} />
 	</Router>
 ), document.getElementById('app'));

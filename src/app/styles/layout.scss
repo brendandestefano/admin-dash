@@ -110,3 +110,29 @@
 		@include span(8 of 12 no-gutters wider);	
 	}
 }
+.report-choices{
+	@include container;
+	@include span(4 or 12 first);
+}
+.report-list{
+	@include container;
+	@include span(4 of 12);
+}
+.report-settings{
+	@include container;
+	@include span(4 of 12 last);
+}
+.report-start-date{
+	@include container;
+	@include span(6 or 12 first);
+	& > div{
+		width: 100% !important;
+	}
+}
+.report-end-date{
+	@include container;
+	@include span(6 or 12 last);
+	& > div{
+		width: 100% !important;
+	}
+}

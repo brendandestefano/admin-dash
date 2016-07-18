@@ -117,7 +117,6 @@ class Drilldown extends Component{
 
 	filterTable(type){
 		if(this.state.cardSelected == true){
-			console.log(this.props.data);
 			this.setState({data: this.props.data, cardSelected: false});
 			return;
 		}

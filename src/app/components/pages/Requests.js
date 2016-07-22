@@ -29,7 +29,7 @@ const muiTheme = getMuiTheme({
 const users = [
    {id: 0, firstName: "Tom", lastName:"Viera", grad: 2012, email: "tom@thecampustap.com", type: "user"},
    {id: 1, firstName: "Eric", lastName:"Zaleski", grad: 2011, email: "Eric@thecampustap.com", type: "user"},
-   {id: 2, firstName: "Talman", lastName: "Floresca", grad: 2009, email: "Talman@thecampustap.com", type: "user"},   
+   {id: 2, firstName: "Talman", lastName: "Floresca", grad: 2009, email: "Talman@thecampustap.com", type: "user"},
    {id: 3, firstName: "Kyla", lastName:"Fortune", grad: 2010, email: "Kyla@thecampustap.com", type: "user"},
    {id: 4, firstName: "Catie", lastName:"Perry", grad: 2004, email: "Catie@thecampustap.com", type: "user"},
    {id: 5, firstName: "Aiden", lastName:"Wildman", grad: 2011, email: "Aiden@thecampustap.com", type: "user"},
@@ -85,7 +85,7 @@ const events = [
 const approved = [
    {id: 0, firstName: "Tom", lastName:"Viera", grad: 2012, email: "tom@thecampustap.com", type: "user"},
    {id: 1, firstName: "Eric", lastName:"Zaleski", grad: 2011, email: "Eric@thecampustap.com", type: "user"},
-   {id: 2, firstName: "Talman", lastName: "Floresca", grad: 2009, email: "Talman@thecampustap.com", type: "user"},   
+   {id: 2, firstName: "Talman", lastName: "Floresca", grad: 2009, email: "Talman@thecampustap.com", type: "user"},
    {id: 3, firstName: "Kyla", lastName:"Fortune", grad: 2010, email: "Kyla@thecampustap.com", type: "user"},
    {id: 4, firstName: "Catie", lastName:"Perry", grad: 2004, email: "Catie@thecampustap.com", type: "user"},
 
@@ -183,7 +183,7 @@ class Requests extends Component{
 								className="tabs-content-wrapper"
 							>
 								<div>
-									<Drilldown 
+									<Drilldown
 										originalSortType="firstName"
 										originalSortDirection="asc"
 										currentType="user"
@@ -198,7 +198,7 @@ class Requests extends Component{
 									/>
 								</div>
 								<div>
-									<Drilldown 
+									<Drilldown
 										originalSortType="company"
 										originalSortDirection="asc"
 										currentType="company"
@@ -213,7 +213,7 @@ class Requests extends Component{
 									/>
 								</div>
 								<div>
-									<Drilldown 
+									<Drilldown
 										originalSortType="title"
 										originalSortDirection="asc"
 										currentType="job"
@@ -228,7 +228,7 @@ class Requests extends Component{
 									/>
 								</div>
 								<div>
-									<Drilldown 
+									<Drilldown
 										originalSortType="title"
 										originalSortDirection="asc"
 										currentType="event"
@@ -243,7 +243,7 @@ class Requests extends Component{
 									/>
 								</div>
 								<div>
-									<Drilldown 
+									<Drilldown
 										originalSortType="firstName"
 										originalSortDirection="asc"
 										currentType="approved"
@@ -257,7 +257,7 @@ class Requests extends Component{
 									/>
 								</div>
 								<div>
-									<Drilldown 
+									<Drilldown
 										originalSortType="firstName"
 										originalSortDirection="asc"
 										currentType="declined"
@@ -271,7 +271,7 @@ class Requests extends Component{
 									/>
 								</div>
 								<div>6</div>
-							</SwipeableViews>	
+							</SwipeableViews>
 						</div>
 					</div>
 				</div>

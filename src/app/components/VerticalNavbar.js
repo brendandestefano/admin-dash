@@ -11,6 +11,7 @@ import CompaniesIcon from 'material-ui/svg-icons/social/location-city';
 import RequestsIcon from 'material-ui/svg-icons/communication/chat';
 import MenuIcon from 'material-ui/svg-icons/navigation/menu';
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
+import EmailIcon from 'material-ui/svg-icons/communication/email';
 import ImageWithOverlay from './ImageWithOverlay';
 import CTMenuItem from './CTMenuItem';
 
@@ -83,6 +84,7 @@ class VerticalNavbar extends Component{
 							<CTMenuItem icon={<JobsIcon />} text="Jobs" key="4" isActive={this.isActiveTab(4)} path="jobs"/>
 							<CTMenuItem icon={<CompaniesIcon />} text="Companies" key="5" isActive={this.isActiveTab(5)} path="companies"/>
 							<CTMenuItem icon={<RequestsIcon />} text="Requests" key="6" isActive={this.isActiveTab(6)} path="requests"/>
+							<CTMenuItem icon={<EmailIcon />} text="Email" key="7" isActive={this.isActiveTab(7)} path="email"/>
 							<ImageWithOverlay 
 								src="https://www.filepicker.io/api/file/l1K7rCntQeuyQXHpwlhr"
 								wrapperClasses="overlay-wrapper navbar-avatar-wrapper js-avatar-target hover-wrapper is-hoverable-logo bottom"

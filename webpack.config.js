@@ -60,6 +60,7 @@ const config = {
         ]
       }
     ],
+    noParse: /node_modules\/quill\/dist/
   },
   devServer: {
     contentBase: 'src/www', // Relative directory for base of server

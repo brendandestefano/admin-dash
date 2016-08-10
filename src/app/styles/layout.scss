@@ -136,3 +136,82 @@
 		width: 100% !important;
 	}
 }
+.email-recipient{
+	@include container;
+	@include span(4 of 12);
+	&.selected{
+		background: #CCC !important;
+	}
+}
+.invitation-left-75{
+	width: 74% !important;
+	float: left;
+	@media all and (max-width: 767px){
+		width: calc(100% - 2rem) !important;
+	}
+}
+.invitation-left-33{
+	@media all and (max-width: 767px){
+		display: none;
+	}
+}
+.event-input-left-75,
+.date-input{
+	width: 75% !important;
+	float: left;
+	@media all and (max-width: 767px){
+		width: 100% !important;
+	}
+}
+.event-input-right-25,
+.time-input{
+	width: 24% !important;
+	float: right;
+	@media all and (max-width: 767px){
+		width: 100% !important;
+	}
+}
+.event-input-left-50{
+	width: 49% !important;
+	float: left;
+	@media all and (max-width: 767px){
+		width: 100% !important;
+	}
+}
+.event-input-right-50{
+	width: 49% !important;
+	float: right;
+	@media all and (max-width: 767px){
+		width: 100% !important;
+	}
+}
+.event-input-left-33{
+	width: 32% !important;
+	float: left;
+	@media all and (max-width: 767px){
+		width: 100% !important;
+	}
+}
+.event-input-middle-33{
+	width: 32% !important;
+	margin-left: 2%;
+	margin-right: 2%;
+	@media all and (max-width: 767px){
+		width: 100% !important;
+	}
+}
+.event-input-right-33{
+	width: 32% !important;
+	float: right;
+	@media all and (max-width: 767px){
+		width: 100% !important;
+	}
+}
+.event-input-right-66{
+	width: 66% !important;
+	float: right;
+	margin-left: 1%;
+	@media all and (max-width: 767px){
+		width: 99% !important;
+	}
+}

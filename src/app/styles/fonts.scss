@@ -154,3 +154,33 @@
 	font-weight: 300;
 	text-align: center;
 }
+.sub-header-2{
+	font-size: 1rem;
+	color: $text-dark-grey;
+	position: relative;
+	margin: 1rem 0;
+	svg{
+		top: 0.125rem;
+		position: absolute;
+		right: -1.25rem;
+		fill: #555 !important;
+		width: 1rem !important;
+		height: 1rem !important;
+	}
+}
+
+.filter-title{
+	font-size: 1.25rem;
+	font-weight: 500;
+	margin-top: 2rem;
+	margin-bottom: .5rem;
+    color: #333;
+	&:first-of-type{
+		margin-top: 1rem;
+	}
+}
+.show-more{
+	text-align: center;
+	font-size: .85rem;
+	color: #00A9E0;
+}

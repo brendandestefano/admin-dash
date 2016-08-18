@@ -1,6 +1,6 @@
 .navbar{
-	@include container;
-	@include span(1 of 12 first no-gutters wide);
+	width: 8.875rem;
+	margin: 0;
 	@media all and (max-width: 767px){
 		width: 16rem;
 		z-index: 4;
@@ -213,5 +213,82 @@
 	margin-left: 1%;
 	@media all and (max-width: 767px){
 		width: 99% !important;
+	}
+}
+.half-left{
+	@include container;
+	width: 49.15254% !important;
+	float: left;
+	&.skinny{
+		width: 44% !important;
+		@media all and (max-width: 767px){
+			width: 90% !important;
+			float: none;
+			margin: auto;
+		}
+	}
+	@media all and (max-width: 767px){
+		width: 90% !important;
+	}
+}
+.half-right{
+	@include container;
+	width: 49.15254% !important;
+	float: right;
+	&.skinny{
+		width: 44% !important;
+		@media all and (max-width: 767px){
+			width: 90% !important;
+			float: none;
+			margin: auto;
+		}
+	}
+	@media all and (max-width: 767px){
+		width: 90% !important;
+	}
+}
+.third-left{
+	@include container;
+	@include span(4 of 12 first);
+	@media all and (max-width: 767px){
+		width: 90% !important;
+		margin: auto;
+		float: none !important;
+	}
+}
+.third-center{
+	@include container;
+	@include span(4 of 12);
+	@media all and (max-width: 767px){
+		width: 90% !important;
+		margin: auto;
+		float: none !important;
+	}
+}
+.third-right{
+	@include container;
+	@include span(4 of 12 last);
+	@media all and (max-width: 767px){
+		width: 90% !important;
+		margin: auto;
+		float: none !important;
+	}
+}
+.two-thirds-left{
+	@include container;
+	@include span(8 of 12 first);
+	@media all and (max-width: 767px){
+		width: 90% !important;
+		margin: auto;
+		float: none !important;
+	}
+}
+.two-thirds-right{
+	@include container;
+	@include span(8 of 12 last);
+	@media all and (max-width: 767px){
+		width: 90% !important;
+		margin: auto;
+		float: none !important;
 	}
 }

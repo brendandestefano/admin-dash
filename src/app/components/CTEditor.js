@@ -62,17 +62,28 @@ var Editor = React.createClass({
 
 	render: function() {
 		return (
-			React.DOM.div({},
-				this.state.enabled && ReactQuill({
+			(this.props.editorOnly)
+			?
+			<div className={(this.props.cssClass) ? this.props.cssClass : ''}>
+				{this.state.enabled && ReactQuill({
 					theme: this.state.theme,
 					value: this.state.value,
 					readOnly: this.state.readOnly,
 					onChange: this.onEditorChange,
-				}),
+				})}
+			</div>
+			:
+			<div className={(this.props.cssClass) ? this.props.cssClass : ''}>
+				{this.state.enabled && ReactQuill({
+					theme: this.state.theme,
+					value: this.state.value,
+					readOnly: this.state.readOnly,
+					onChange: this.onEditorChange,
+				})}
 				<h3 style={this.props.attachmentTextStyle}>Attachments:</h3>,
 				<List style={{maxWidth: "30rem"}}>
 					{this.renderAttachments()}
-				</List>,
+				</List>
 				<ReactFilepicker 
 					apikey={FILE_PICKER_KEY} 
 					options={{
@@ -84,14 +95,14 @@ var Editor = React.createClass({
 						},
 					}} 
 					onSuccess={this.handleUploadSuccess} 
-				/>,
+				/>
 				<RaisedButton 
 					label={this.props.btnText}
 					onTouchTap={() => this.props.btnOnClick(stateToHTML(this.state.editorState.getCurrentContent()))}
 					primary={true}
 					className={this.props.btnClassName}
 				/>
-			)
+			</div>	
 		);
 	}
 

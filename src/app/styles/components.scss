@@ -25,6 +25,34 @@
 	overflow: scroll;
 	height: 100%;
 }
+.landing-config-group{
+	position: relative;
+	margin: 1rem 0;
+	overflow: overlay;
+	.input-field{
+		float: left;
+		width: 84% !important;
+		&.fill{
+			width: 100% !important;
+		}
+	}
+	.preview{
+		width: 10%;
+		background-color: $brand-color !important;
+		color: #FFF !important;
+		margin-top: 1.75rem !important;
+		position: absolute !important;
+		right: 0;
+		bottom: 0;
+		&.text-field{
+			bottom: 1.5rem;
+		}
+	}
+}
+.preview-dialog{
+	top: 0 !important;
+	padding-top: 1rem !important;
+}
 .search-bar{
 	background: #D9DFE1;
 	height: 3.25rem;

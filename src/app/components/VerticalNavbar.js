@@ -12,8 +12,10 @@ import RequestsIcon from 'material-ui/svg-icons/communication/chat';
 import MenuIcon from 'material-ui/svg-icons/navigation/menu';
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
 import EmailIcon from 'material-ui/svg-icons/communication/email';
+import LandingPageIcon from 'material-ui/svg-icons/action/settings';
 import ImageWithOverlay from './ImageWithOverlay';
 import CTMenuItem from './CTMenuItem';
+import School from '../models/School';
 
 class VerticalNavbar extends Component{
 	constructor(props, context){
@@ -67,7 +69,7 @@ class VerticalNavbar extends Component{
 								className="btn-toggle btn-toggle-close"
 								onTouchTap={(e) => this.toggleDrawer(e)}/>
 							<ImageWithOverlay 
-								src="https://pbs.twimg.com/profile_images/60951831/Blue_400x400.gif"
+								src={School.logo}
 								wrapperClasses="js-school-logo-target hover-wrapper is-hoverable-logo top"
 								innerClasses="overlay-wrapper animate-top js-school-logo-target"
 								logoClasses="js-school-logo"
@@ -78,13 +80,16 @@ class VerticalNavbar extends Component{
 								onLoadDirection="top"
 								setBanner={true}
 							/>
-							<CTMenuItem icon={<DashboardIcon />} text="Dashboard" key="1" isActive={this.isActiveTab(1)} path="/"/>
-							<CTMenuItem icon={<ReportsIcon />} text="Reports" key="2" isActive={this.isActiveTab(2)} path="reports"/>
-							<CTMenuItem icon={<EventsIcon />} text="Events" key="3" isActive={this.isActiveTab(3)} path="events"/>
-							<CTMenuItem icon={<JobsIcon />} text="Jobs" key="4" isActive={this.isActiveTab(4)} path="jobs"/>
-							<CTMenuItem icon={<CompaniesIcon />} text="Companies" key="5" isActive={this.isActiveTab(5)} path="companies"/>
-							<CTMenuItem icon={<RequestsIcon />} text="Requests" key="6" isActive={this.isActiveTab(6)} path="requests"/>
-							<CTMenuItem icon={<EmailIcon />} text="Email" key="7" isActive={this.isActiveTab(7)} path="email"/>
+							<div style={{overflow: "scroll", bottom: "8.875rem", position: "fixed", top: "8.875rem", right: 0, left: 0}}>
+								<CTMenuItem icon={<DashboardIcon />} text="Dashboard" key="1" isActive={this.isActiveTab(1)} path="/"/>
+								<CTMenuItem icon={<ReportsIcon />} text="Reports" key="2" isActive={this.isActiveTab(2)} path="reports"/>
+								<CTMenuItem icon={<EventsIcon />} text="Events" key="3" isActive={this.isActiveTab(3)} path="events"/>
+								<CTMenuItem icon={<JobsIcon />} text="Jobs" key="4" isActive={this.isActiveTab(4)} path="jobs"/>
+								<CTMenuItem icon={<CompaniesIcon />} text="Companies" key="5" isActive={this.isActiveTab(5)} path="companies"/>
+								<CTMenuItem icon={<RequestsIcon />} text="Requests" key="6" isActive={this.isActiveTab(6)} path="requests"/>
+								<CTMenuItem icon={<EmailIcon />} text="Email" key="7" isActive={this.isActiveTab(7)} path="email"/>
+								<CTMenuItem icon={<LandingPageIcon />} text="Landing Page Editor" key="8" isActive={this.isActiveTab(8)} path="landing-page"/>
+							</div>
 							<ImageWithOverlay 
 								src="https://www.filepicker.io/api/file/l1K7rCntQeuyQXHpwlhr"
 								wrapperClasses="overlay-wrapper navbar-avatar-wrapper js-avatar-target hover-wrapper is-hoverable-logo bottom"

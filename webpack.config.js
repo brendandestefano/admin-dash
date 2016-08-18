@@ -16,6 +16,7 @@ const config = {
   output: {
     filename: 'app.js',
     path: __dirname + "/dist", // Path of output file
+    publicPath: "/"
   },
 
   plugins: [
@@ -56,7 +57,6 @@ const config = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         loaders: [
             'file?hash=sha512&digest=hex&name=[hash].[ext]',
-            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
         ]
       }
     ],
@@ -67,8 +67,9 @@ const config = {
     devtool: 'eval',
     hot: true, // Live-reload
     inline: true,
-    port: 3000, // Port Number
+    port: 8080, // Port Number
     host: 'localhost', // Change to '0.0.0.0' for external facing server
+    historyApiFallback: true,
   },
   devtool: 'source-map',
   devtool: 'eval',

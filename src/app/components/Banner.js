@@ -5,7 +5,7 @@ class Banner extends Component{
 	render(){
 		return(
 			<div className="banner" style={{background: "url('"+this.props.backgroundUrl+"') no-repeat center/cover"}} >
-				<h2 className="header">{this.props.text}</h2>
+				<h2 className="header">CampusTap University</h2>
 				<div className="overlay"></div>
 				{(this.props.export) ? 
 					<FlatButton label="Export To CSV" className="btn-export"/>

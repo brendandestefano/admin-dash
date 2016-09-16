@@ -80,7 +80,7 @@ class VerticalNavbar extends Component{
 								onLoadDirection="top"
 								setBanner={true}
 							/>
-							<div style={{bottom: "8.875rem", position: "fixed", top: "8.875rem", right: 0, left: 0}}>
+							<div style={{bottom: "8.875rem", position: "fixed", top: "8.875rem", right: 0, left: 0, overflowY: "scroll"}}>
 								<CTMenuItem icon={<DashboardIcon />} text="Dashboard" key="1" isActive={this.isActiveTab(1)} path="/"/>
 								<CTMenuItem icon={<ReportsIcon />} text="Reports" key="2" isActive={this.isActiveTab(2)} path="reports"/>
 								<CTMenuItem icon={<EventsIcon />} text="Events" key="3" isActive={this.isActiveTab(3)} path="events"/>

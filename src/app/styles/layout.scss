@@ -1,6 +1,6 @@
 .navbar{
-	width: 8.875rem;
-	margin: 0;
+	@include container;
+	@include span(1 of 12 first wide no-gutters);
 	@media all and (max-width: 767px){
 		width: 16rem;
 		z-index: 4;
@@ -10,7 +10,7 @@
 }
 .main{
 	@include container;
-	@include span(11 of 12 last no-gutters);
+	@include span(11 of 12 last);
 	@media all and (max-width: 767px){
 		@include span(12 of 12 no-gutters);
 	}
